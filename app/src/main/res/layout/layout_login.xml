@@ -3,12 +3,15 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/signup"
+    android:alpha="0.5"
+    android:background="@drawable/layout_bg"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="0dp"
+        android:textColor="@color/white"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
@@ -33,7 +36,7 @@
             android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="hint" />
+            android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
@@ -42,6 +45,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
+        android:textColor="@color/white"
         android:text="Password"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,16 +76,18 @@
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
         android:layout_marginTop="24dp"
         android:text="Forgot Password?"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="@+id/textInputLayout2"
         app:layout_constraintTop_toBottomOf="@+id/textInputLayout2" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/signinbutton"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        app:cornerRadius="15dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
@@ -98,22 +104,26 @@
         android:layout_width="0dp"
         android:layout_height="2dp"
         android:layout_marginStart="24dp"
+
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:background="@android:color/holo_green_light"
+        android:background="@android:color/white"
         app:layout_constraintEnd_toStartOf="@+id/textView6"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/signinbutton" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="18dp"
+        android:layout_height="21dp"
+
         android:layout_marginTop="24dp"
         android:text="Or"
-        app:layout_constraintBottom_toBottomOf="@+id/view1"
-        app:layout_constraintTop_toBottomOf="@+id/signinbutton"
-        tools:layout_editor_absoluteX="198dp" />
+        app:layout_constraintEnd_toStartOf="@+id/view1"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/signinbutton" />
 
     <View
         android:id="@+id/view1"
@@ -122,9 +132,9 @@
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:layout_marginEnd="24dp"
-        android:background="@android:color/holo_green_light"
+        android:background="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/textView6"
         app:layout_constraintTop_toBottomOf="@+id/signinbutton" />
 

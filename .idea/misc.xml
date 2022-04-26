@@ -4,8 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/eye_selector.xml" value="0.169" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/layout_bg.xml" value="0.169" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/activity_login.xml" value="0.15476190476190477" />
-        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/layout_login.xml" value="0.25" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/layout_login.xml" value="0.33" />
       </map>
     </option>
   </component>
