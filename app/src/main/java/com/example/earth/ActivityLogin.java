@@ -26,6 +26,9 @@ public class ActivityLogin extends AppCompatActivity {
             startActivity(new Intent(ActivityLogin.this,ResetPassword.class));
         });
 
+        binding.signupbtn.setOnClickListener(view -> {
+            startActivity(new Intent(ActivityLogin.this,ActivityRegister.class));
+        });
 
         binding.layLogin.signinbutton.setOnClickListener(view -> {
                 login();
@@ -45,7 +48,6 @@ public class ActivityLogin extends AppCompatActivity {
     private boolean valid() {
 
         String email  = binding.layLogin.email.getText().toString().trim();
-
 
         if(email.isEmpty()){
             binding.layLogin.email.setError("Please input email");

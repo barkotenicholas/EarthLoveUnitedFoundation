@@ -3,10 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/aa_24.xml" value="0.1695" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/eye_selector.xml" value="0.169" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/ic_visibility_off.xml" value="0.1695" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/ic_visible_on.xml" value="0.1695" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/layout_bg.xml" value="0.169" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/activity_login.xml" value="0.15476190476190477" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/activity_reset_password.xml" value="0.25" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/lay_register.xml" value="0.25" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/layout_login.xml" value="0.33" />
       </map>
     </option>
