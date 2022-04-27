@@ -1,16 +1,14 @@
 package com.example.earth.ui;
 
-import android.os.Bundle;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.earth.R;
+import android.os.Bundle;
 
-public class ProfileActivity extends AppCompatActivity {
+public class LaunchActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_launch);
     }
 }
