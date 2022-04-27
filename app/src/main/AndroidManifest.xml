@@ -11,7 +11,8 @@
         android:theme="@style/Theme.Earth">
         <activity
             android:name=".ui.otp.OtpVerificationActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Earth.NoActionBar"/>
         <activity
             android:name=".ui.signup.SignUpActivity"
             android:exported="true"
@@ -27,6 +28,10 @@
             android:exported="false">
 
         </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

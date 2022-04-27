@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/sign_up_fields.xml" value="0.136" />
         <entry key="app/src/main/res/layout/activity_otp_verification.xml" value="0.13385416666666666" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.25" />
       </map>
