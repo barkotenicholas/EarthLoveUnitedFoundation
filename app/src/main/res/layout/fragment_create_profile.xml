@@ -47,7 +47,7 @@
                 android:layout_width="339dp"
                 android:layout_height="300dp"
                 android:layout_margin="10dp"
-                android:background="@drawable/rounded_corner"
+                android:background="@drawable/fields_round_corner"
                 tools:src="@tools:sample/avatars" />
 
             <TextView
@@ -203,7 +203,6 @@
                 android:background="@drawable/fields_round_corner"
                 android:minHeight="250dp"
 
-                android:nextFocusDown="@+id/passwordEditText"
                 android:padding="10dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white"
