@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
+import com.example.earth.R;
+
 public class LaunchActivity extends AppCompatActivity {
 
     @Override
