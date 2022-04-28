@@ -20,7 +20,9 @@ public class ActivityLogin extends AppCompatActivity {
         binding = ActivityLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         binding.layLogin.forgotpass.setOnClickListener(view -> {
             startActivity(new Intent(ActivityLogin.this,ResetPassword.class));

@@ -61,6 +61,7 @@
         android:layout_marginEnd="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:endIconMode="password_toggle"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:passwordToggleDrawable="@drawable/eye_selector">
 
@@ -86,8 +87,7 @@
     <com.google.android.material.button.MaterialButton
         android:id="@+id/signinbutton"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:cornerRadius="15dp"
+        android:layout_height="50dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="24dp"
@@ -95,6 +95,7 @@
         android:backgroundTintMode="@color/green"
         android:text="LOGIN"
         android:textColor="@color/black"
+        app:cornerRadius="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/forgotpass" />
@@ -115,11 +116,12 @@
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="18dp"
-        android:layout_height="21dp"
+        android:layout_width="27dp"
+        android:layout_height="22dp"
 
         android:layout_marginTop="24dp"
         android:text="Or"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
         app:layout_constraintEnd_toStartOf="@+id/view1"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toEndOf="@+id/view"
@@ -143,6 +145,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
+        android:layout_marginBottom="32dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/imageView2"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
