@@ -17,6 +17,7 @@ import com.example.earth.adapters.OtpAdapter;
 import com.example.earth.databinding.ActivityOtpVerificationBinding;
 import com.example.earth.databinding.FragmentNumberBinding;
 
+import java.util.Objects;
 import java.util.zip.Inflater;
 
 /**
@@ -82,8 +83,10 @@ public class NumberFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+
         numberBinding.phoneNumberNext.setOnClickListener(view1->{
-            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+            //Checks **
+            FragmentTransaction transaction = requireActivity().getSupportFragmentManager().beginTransaction();
             transaction.replace(R.id.numberFragment,new CodeFragment());
             transaction.commit();
         });

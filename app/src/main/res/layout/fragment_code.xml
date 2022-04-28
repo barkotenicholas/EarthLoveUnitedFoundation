@@ -52,8 +52,11 @@
                 app:itemWidth="60dp"
                 app:itemRadius="4dp"
                 app:itemSpacing="0dp"
+                android:textSize="20dp"
+                android:textColor="@color/white"
                 app:lineColor="@color/white"
-                app:viewType="rectangle" />
+                app:viewType="rectangle"
+                style="@style/PinWidget.PinView"/>
         </LinearLayout>
 
         <LinearLayout
