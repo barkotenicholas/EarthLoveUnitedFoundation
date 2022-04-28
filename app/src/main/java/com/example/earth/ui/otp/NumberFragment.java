@@ -1,15 +1,23 @@
 package com.example.earth.ui.otp;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.earth.R;
+import com.example.earth.adapters.OtpAdapter;
+import com.example.earth.databinding.ActivityOtpVerificationBinding;
 import com.example.earth.databinding.FragmentNumberBinding;
+
+import java.util.zip.Inflater;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -19,6 +27,7 @@ import com.example.earth.databinding.FragmentNumberBinding;
 public class NumberFragment extends Fragment {
 
     private FragmentNumberBinding numberBinding;
+    private ActivityOtpVerificationBinding otpVerificationBinding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -64,6 +73,19 @@ public class NumberFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_number, container, false);
+
+        otpVerificationBinding = ActivityOtpVerificationBinding.inflate(getLayoutInflater());
+        numberBinding = FragmentNumberBinding.inflate(inflater,container,false);
+        return numberBinding.getRoot();
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        numberBinding.phoneNumberNext.setOnClickListener(view1->{
+            FragmentTransaction transaction = getActivity().getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.numberFragment,new CodeFragment());
+            transaction.commit();
+        });
     }
 }
