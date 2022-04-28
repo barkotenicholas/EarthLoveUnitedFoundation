@@ -4,8 +4,8 @@
         android:radius="12dp"
         android:topRightRadius="0dp"
         android:bottomRightRadius="0dp"/>
-    <padding android:top="7.7dp"
-        android:bottom="7.7dp"/>
+    <padding android:top="8dp"
+        android:bottom="8dp"/>
 
     <solid android:color="@color/earthDark"/>
     <stroke android:color="@color/white"
