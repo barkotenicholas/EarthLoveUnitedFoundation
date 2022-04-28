@@ -8,6 +8,8 @@
         <entry key="app/src/main/res/drawable/sign_up_form.xml" value="0.136" />
         <entry key="app/src/main/res/layout/activity_otp_verification.xml" value="0.13385416666666666" />
         <entry key="app/src/main/res/layout/activity_sign_up.xml" value="0.324435318275154" />
+        <entry key="app/src/main/res/layout/fragment_code.xml" value="0.11458333333333333" />
+        <entry key="app/src/main/res/layout/fragment_number.xml" value="0.13385416666666666" />
       </map>
     </option>
   </component>
