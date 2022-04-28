@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.earth.R;
+import com.example.earth.adapters.OtpAdapter;
 import com.example.earth.adapters.OtpNumberAdapter;
 import com.example.earth.databinding.ActivityOtpVerificationBinding;
 
@@ -21,8 +22,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
         View view = otpVerificationBinding.getRoot();
         setContentView(view);
 
-        OtpNumberAdapter adapter = new OtpNumberAdapter(getSupportFragmentManager(),getLifecycle());
-
+        OtpAdapter adapter = new OtpAdapter(getSupportFragmentManager(),getLifecycle());
         otpVerificationBinding.otpViewPager.setAdapter(adapter);
     }
 }
