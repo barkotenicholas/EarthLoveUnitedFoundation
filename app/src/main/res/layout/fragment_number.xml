@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.otp.NumberFragment"
-    android:background="@color/earthDark">
+    android:background="@color/earthLighterDark"
+    tools:context=".ui.otp.NumberFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -44,8 +44,9 @@
                 android:id="@+id/countryCodeHolder"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="11dp"
                 android:background="@drawable/country_code_edit"
-                app:ccpDialog_textColor="@color/white"
+                app:ccpDialog_textColor="@color/earthDark"
                 app:ccp_arrowColor="@color/white"
                 app:ccp_contentColor="@color/white"
                 app:ccp_defaultNameCode="US" />
@@ -53,13 +54,18 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                app:boxBackgroundMode="none"
                 android:layout_toEndOf="@id/countryCodeHolder">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/phoneNumberEdit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/phone_number_edit" />
+                    android:background="@drawable/phone_number_edit"
+                    android:gravity="center_vertical"
+                    android:inputType="number"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>
@@ -102,8 +108,10 @@
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="80dp"
             android:orientation="vertical"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout13">
 

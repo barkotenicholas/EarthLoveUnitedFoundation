@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.earth.R;
+import com.example.earth.databinding.FragmentNumberBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +17,8 @@ import com.example.earth.R;
  * create an instance of this fragment.
  */
 public class NumberFragment extends Fragment {
+
+    private FragmentNumberBinding numberBinding;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
