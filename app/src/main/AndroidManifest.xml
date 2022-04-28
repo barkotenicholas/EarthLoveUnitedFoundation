@@ -10,6 +10,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Earth">
         <activity
+            android:name=".ui.otp.OtpVerificationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Earth.NoActionBar"/>
+        <activity
+            android:name=".ui.signup.SignUpActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Earth.NoActionBar">
             android:name=".PhoneConfirmation"
             android:exported="false" />
         <activity
@@ -24,6 +31,7 @@
         <activity
             android:name=".ActivityLogin"
             android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,6 +40,13 @@
         </activity>
         <activity
             android:name=".MainActivity"
+            android:exported="false">
+
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
             android:exported="true" />
     </application>
 
