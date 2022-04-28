@@ -17,6 +17,21 @@
             android:name=".ui.signup.SignUpActivity"
             android:exported="true"
             android:theme="@style/Theme.Earth.NoActionBar">
+            android:name=".PhoneConfirmation"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityPhone"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityRegister"
+            android:exported="false" />
+        <activity
+            android:name=".ResetPassword"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityLogin"
+            android:exported="true">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -32,6 +47,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+            android:exported="true" />
     </application>
 
 </manifest>
