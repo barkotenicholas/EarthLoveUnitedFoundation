@@ -48,7 +48,8 @@
                 android:layout_height="300dp"
                 android:layout_margin="10dp"
                 android:background="@drawable/fields_round_corner"
-                tools:src="@tools:sample/avatars" />
+                android:scaleType="centerCrop"
+                tools:src="@drawable/girl" />
 
             <TextView
                 android:id="@+id/nameLabel"
