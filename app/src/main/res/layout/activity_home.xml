@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".HomeActivity">
+
+<!--    house the whole body-->
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--tittle nav-->
+        <RelativeLayout
+            android:id="@+id/titlelayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/title_nav_bar" />
+
+        </RelativeLayout>
+
+        <!--        stories part-->
+
+        <RelativeLayout
+            android:id="@+id/storieslayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/titlelayout">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="81dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="2dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <com.google.android.material.imageview.ShapeableImageView
+
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="10dp"
+                    app:layout_anchor="@+id/relativeLayout"
+                    app:layout_anchorGravity="center"
+                    app:shapeAppearanceOverlay="@style/roundedImageView"
+                    app:srcCompat="@drawable/face"
+                    app:strokeColor="@color/earthGreen"
+                    app:strokeWidth="3dp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="10dp"
+                    android:layout_marginEnd="3dp"
+                    app:layout_anchor="@+id/relativeLayout"
+                    app:layout_anchorGravity="center"
+                    app:shapeAppearanceOverlay="@style/roundedImageView"
+                    app:srcCompat="@drawable/face"
+                    app:strokeColor="@color/earthGreen"
+                    app:strokeWidth="3dp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginEnd="3dp"
+                    android:padding="10dp"
+                    app:layout_anchor="@+id/relativeLayout"
+                    app:layout_anchorGravity="center"
+                    app:shapeAppearanceOverlay="@style/roundedImageView"
+                    app:srcCompat="@drawable/face"
+                    app:strokeColor="@color/earthGreen"
+                    app:strokeWidth="3dp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginEnd="3dp"
+                    android:padding="10dp"
+                    app:layout_anchor="@+id/relativeLayout"
+                    app:layout_anchorGravity="center"
+                    app:shapeAppearanceOverlay="@style/roundedImageView"
+                    app:srcCompat="@drawable/face"
+                    app:strokeColor="@color/earthGreen"
+                    app:strokeWidth="3dp" />
+
+                <com.google.android.material.imageview.ShapeableImageView
+
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:padding="10dp"
+                    android:layout_marginEnd="3dp"
+                    app:layout_anchor="@+id/relativeLayout"
+                    app:layout_anchorGravity="center"
+                    app:shapeAppearanceOverlay="@style/roundedImageView"
+                    app:srcCompat="@drawable/face"
+                    app:strokeColor="@color/earthGreen"
+                    app:strokeWidth="3dp" />
+
+
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <!--        middle part-->
+        <RelativeLayout
+            android:id="@+id/postlayout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/storieslayout">
+
+        </RelativeLayout>
+
+        <!--        bottom nav-->
+        <RelativeLayout
+            android:id="@+id/bottomnav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/postlayout2">
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
