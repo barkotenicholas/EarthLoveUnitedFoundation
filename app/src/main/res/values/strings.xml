@@ -3,4 +3,5 @@
     <string name="signup"><u>SignUp</u></string>
     <string name="terms_and_conditions"><u>Terms and conditions</u></string>
     <string name="login"><u>Login</u></string>
+    <string name="phone_content">We will send you a text with a verification <code class=""></code>\n Message and data rates may apply</string>
 </resources>

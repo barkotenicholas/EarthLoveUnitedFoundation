@@ -47,16 +47,16 @@ public class ActivityLogin extends AppCompatActivity {
 
     private boolean valid() {
 
-        String email  = binding.layLogin.email.getText().toString().trim();
+        String email  = binding.layLogin.Name.getText().toString().trim();
 
         if(email.isEmpty()){
-            binding.layLogin.email.setError("Please input email");
+            binding.layLogin.Name.setError("Please input email");
             return false;
         }else if(!email.matches(emailRegex)){
-            binding.layLogin.email.setError("Invalid Email!");
+            binding.layLogin.Name.setError("Invalid Email!");
             return false;
         }else {
-            binding.layLogin.email.setError(null);
+            binding.layLogin.Name.setError(null);
             return true;
         }
 

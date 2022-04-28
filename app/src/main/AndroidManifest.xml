@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Earth">
         <activity
+            android:name=".PhoneConfirmation"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityPhone"
+            android:exported="false" />
+        <activity
             android:name=".ActivityRegister"
             android:exported="false" />
         <activity
