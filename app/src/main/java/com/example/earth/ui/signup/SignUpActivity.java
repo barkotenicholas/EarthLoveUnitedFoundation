@@ -1,20 +1,35 @@
 package com.example.earth.ui.signup;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
 import com.example.earth.R;
 import com.example.earth.databinding.ActivitySignUpBinding;
+import com.example.earth.models.UserProfile;
 import com.example.earth.ui.otp.OtpVerificationActivity;
+import com.google.firebase.FirebaseException;
+import com.google.firebase.FirebaseTooManyRequestsException;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
+import com.google.firebase.auth.PhoneAuthCredential;
+import com.google.firebase.auth.PhoneAuthOptions;
+import com.google.firebase.auth.PhoneAuthProvider;
+
+import java.util.concurrent.TimeUnit;
 
 public class SignUpActivity extends AppCompatActivity {
 
     private ActivitySignUpBinding signUpBinding;
-
+    private FirebaseAuth mAuth;
+    private PhoneAuthProvider.ForceResendingToken mResendToken;
+    private String mVerificationId;
+    Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +38,10 @@ public class SignUpActivity extends AppCompatActivity {
         View view = signUpBinding.getRoot();
         setContentView(view);
 
+        mAuth = FirebaseAuth.getInstance();
+
+
+
 
 
         signUpBinding.signButton.setOnClickListener( view1->{
@@ -30,7 +49,7 @@ public class SignUpActivity extends AppCompatActivity {
             String email = signUpBinding.emailEditText.getText().toString().trim();
             String password = signUpBinding.userPassword.getText().toString().trim();
             String confirmPassword = signUpBinding.confirmPassword.getText().toString().trim();
-
+            String phoneNumber =signUpBinding.phoneNumberEdit.getText().toString().trim();
             boolean validEmail = isValidEmail(email);
             boolean validName = isValidName(name);
             boolean validPassword = isValidPassword(password, confirmPassword);
@@ -39,10 +58,57 @@ public class SignUpActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Invalid Credentials", Toast.LENGTH_LONG).show();
                 return;
             }
-            Intent intent = new Intent(getApplicationContext(), OtpVerificationActivity.class);
-            startActivity(intent);
+
+            UserProfile userProfile = new UserProfile();
+            userProfile.setName(name);
+            userProfile.setEmail(email);
+            userProfile.setPass(password);
+            userProfile.setPhone(phoneNumber);
+            intent = new Intent(getApplicationContext(), OtpVerificationActivity.class);
+            intent.putExtra("EXTRA",userProfile);
+            signUp(userProfile);
+
+
         });
     }
+
+    private void signUp(UserProfile userProfile) {
+
+        PhoneAuthOptions options =
+                PhoneAuthOptions.newBuilder(mAuth)
+                        .setPhoneNumber(userProfile.getPhone())       // Phone number to verify
+                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
+                        .setActivity(this)                 // Activity (for callback binding)
+                        .setCallbacks(getmCallbacks)          // OnVerificationStateChangedCallbacks
+                        .build();
+        PhoneAuthProvider.verifyPhoneNumber(options);
+    }
+
+    private PhoneAuthProvider.OnVerificationStateChangedCallbacks getmCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
+        @Override
+        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
+                String c = phoneAuthCredential.getSmsCode();
+                if(c != null){
+
+                    intent.putExtra("CODE", c);
+                    startActivity(intent);
+                }
+        }
+
+        @Override
+        public void onVerificationFailed(@NonNull FirebaseException e) {
+            Toast.makeText(SignUpActivity.this,"Error could not verify phone",Toast.LENGTH_SHORT).show();
+        }
+        @Override
+        public void onCodeSent(@NonNull String verificationId,
+                               @NonNull PhoneAuthProvider.ForceResendingToken token) {
+
+            Log.d("TAG", "onCodeSent:" + verificationId);
+
+            mVerificationId = verificationId;
+            mResendToken = token;
+        }
+    };
 
     private boolean isValidEmail(String Email) {
 

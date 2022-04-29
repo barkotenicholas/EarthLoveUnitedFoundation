@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.example.earth.databinding.ActivityLoginBinding;
+import com.example.earth.ui.signup.SignUpActivity;
 
 public class ActivityLogin extends AppCompatActivity {
 
@@ -29,7 +30,7 @@ public class ActivityLogin extends AppCompatActivity {
         });
 
         binding.signupbtn.setOnClickListener(view -> {
-            startActivity(new Intent(ActivityLogin.this,ActivityRegister.class));
+            startActivity(new Intent(ActivityLogin.this, SignUpActivity.class));
         });
 
         binding.layLogin.signinbutton.setOnClickListener(view -> {
@@ -56,6 +57,7 @@ public class ActivityLogin extends AppCompatActivity {
             return false;
         }else if(!email.matches(emailRegex)){
             binding.layLogin.Name.setError("Invalid Email!");
+            binding.layLogin.Name.getText().clear();
             return false;
         }else {
             binding.layLogin.Name.setError(null);
@@ -68,6 +70,7 @@ public class ActivityLogin extends AppCompatActivity {
         String pass   = binding.layLogin.password.getText().toString().trim();
         if(pass.isEmpty()){
             binding.layLogin.password.setError("Please input password");
+            binding.layLogin.password.getText().clear();
             return false;
         }else {
             binding.layLogin.password.setError(null);

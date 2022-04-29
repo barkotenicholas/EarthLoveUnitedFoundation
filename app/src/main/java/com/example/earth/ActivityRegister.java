@@ -21,6 +21,9 @@ public class ActivityRegister extends AppCompatActivity {
         binding = ActivityRegisterBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().hide();
+        }
 
         binding.button.setOnClickListener(view -> {
             if(validateName() && validateEmail()  && validatepass()){
