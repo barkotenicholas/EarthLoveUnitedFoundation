@@ -5,16 +5,17 @@
       <map>
         <entry key="app/src/main/res/drawable/fields_round_corner.xml" value="0.1755" />
         <entry key="app/src/main/res/drawable/green_rounded_corner.xml" value="0.1805" />
+        <entry key="app/src/main/res/drawable/green_stroke_button.xml" value="0.1805" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1215" />
         <entry key="app/src/main/res/drawable/white_round_buttons.xml" value="0.1805" />
-        <entry key="app/src/main/res/layout/activity_launch.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/activity_launch.xml" value="0.16" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.13" />
-        <entry key="app/src/main/res/layout/fragment_clubs.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_clubs.xml" value="0.16" />
         <entry key="app/src/main/res/layout/fragment_create_profile.xml" value="0.16877637130801687" />
         <entry key="app/src/main/res/layout/fragment_display_profile.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_interests.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_share_contacts.xml" value="0.171875" />
       </map>
     </option>
