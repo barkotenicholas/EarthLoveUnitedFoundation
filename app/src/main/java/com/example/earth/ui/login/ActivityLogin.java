@@ -1,7 +1,5 @@
-package com.example.earth;
+package com.example.earth.ui.login;
 
-import androidx.activity.result.ActivityResult;
-import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -11,9 +9,11 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Toast;
 
+import com.example.earth.MainActivity;
+import com.example.earth.R;
+import com.example.earth.ui.signup.ResetPassword;
 import com.example.earth.databinding.ActivityLoginBinding;
 import com.example.earth.ui.signup.SignUpActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -30,7 +30,6 @@ import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
 public class ActivityLogin extends AppCompatActivity {
-
 
     ActivityLoginBinding binding;
     String emailRegex = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]";
@@ -61,7 +60,7 @@ public class ActivityLogin extends AppCompatActivity {
 
 
         binding.layLogin.forgotpass.setOnClickListener(view -> {
-            startActivity(new Intent(ActivityLogin.this,ResetPassword.class));
+            startActivity(new Intent(ActivityLogin.this, ResetPassword.class));
         });
 
         binding.signupbtn.setOnClickListener(view -> {
@@ -130,7 +129,7 @@ public class ActivityLogin extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(ActivityLogin.this,MainActivity.class);
+                            Intent intent = new Intent(ActivityLogin.this, MainActivity.class);
                             startActivity(intent);
                         } else {
                             // If sign in fails, display a message to the user.

@@ -5,7 +5,7 @@
     style="@style/TextAppearance.Material3.BodyLarge"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ActivityLogin">
+    tools:context=".ui.login.ActivityLogin">
 
     <TextView
         android:id="@+id/textView"

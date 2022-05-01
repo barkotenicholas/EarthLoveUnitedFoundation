@@ -28,10 +28,10 @@
             android:name=".ActivityRegister"
             android:exported="false" />
         <activity
-            android:name=".ResetPassword"
+            android:name=".ui.signup.ResetPassword"
             android:exported="false" />
         <activity
-            android:name=".ActivityLogin"
+            android:name=".ui.login.ActivityLogin"
             android:exported="true">
 
             <intent-filter>
