@@ -1,32 +1,20 @@
 package com.example.earth.ui.signup;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.earth.R;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.example.earth.databinding.ActivitySignUpBinding;
 import com.example.earth.models.UserProfile;
 import com.example.earth.ui.otp.OtpVerificationActivity;
-import com.google.firebase.FirebaseException;
-import com.google.firebase.FirebaseTooManyRequestsException;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
-import com.google.firebase.auth.PhoneAuthCredential;
-import com.google.firebase.auth.PhoneAuthOptions;
-import com.google.firebase.auth.PhoneAuthProvider;
-
-import java.util.concurrent.TimeUnit;
 
 public class SignUpActivity extends AppCompatActivity {
 
     private ActivitySignUpBinding signUpBinding;
-    private FirebaseAuth mAuth;
 
     Intent intent;
     UserProfile userProfile;
@@ -38,8 +26,6 @@ public class SignUpActivity extends AppCompatActivity {
         signUpBinding = ActivitySignUpBinding.inflate(getLayoutInflater());
         View view = signUpBinding.getRoot();
         setContentView(view);
-
-        mAuth = FirebaseAuth.getInstance();
 
 
         signUpBinding.signButton.setOnClickListener(view1 -> {
@@ -53,7 +39,6 @@ public class SignUpActivity extends AppCompatActivity {
             String code = signUpBinding.countryCodeHolder.getFullNumber();
             String num = "+" + code;
 
-            Toast.makeText(SignUpActivity.this, " " + num + " ", Toast.LENGTH_SHORT).show();
 
             boolean validEmail = isValidEmail(email);
             boolean validName = isValidName(name);
@@ -72,8 +57,6 @@ public class SignUpActivity extends AppCompatActivity {
             intent = new Intent(SignUpActivity.this, OtpVerificationActivity.class);
             intent.putExtra("EXTRA", userProfile);
             startActivity(intent);
-
-
 
 
         });

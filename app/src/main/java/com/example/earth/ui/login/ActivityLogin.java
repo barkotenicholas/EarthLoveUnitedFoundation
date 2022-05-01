@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,12 +32,15 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class ActivityLogin extends AppCompatActivity {
 
+    private static final String TAG = ActivityLogin.class.getName();
+
     ActivityLoginBinding binding;
-    String emailRegex = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]";
-    private GoogleSignInClient mGoogleSignInClient  ;
-    private static final int RC_SIGN_IN = 9001;
-    private static final String TAG = "GoogleActivity";
+
+    private GoogleSignInClient mGoogleSignInClient;
     private FirebaseAuth mAuth;
+
+    private ProgressDialog progressDialog;
+    String emailRegex = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,27 +53,17 @@ public class ActivityLogin extends AppCompatActivity {
             getSupportActionBar().hide();
         }
 
-
-        createRequest();
         mAuth = FirebaseAuth.getInstance();
 
+        createRequest();
 
-        binding.layLogin.imageView.setOnClickListener(view -> {
-            signIn();
-        });
+        binding.layLogin.imageView.setOnClickListener(view -> signIn());
 
+        binding.layLogin.forgotpass.setOnClickListener(view -> startActivity(new Intent(ActivityLogin.this, ResetPassword.class)));
 
-        binding.layLogin.forgotpass.setOnClickListener(view -> {
-            startActivity(new Intent(ActivityLogin.this, ResetPassword.class));
-        });
+        binding.signupbtn.setOnClickListener(view -> startActivity(new Intent(ActivityLogin.this, SignUpActivity.class)));
 
-        binding.signupbtn.setOnClickListener(view -> {
-            startActivity(new Intent(ActivityLogin.this, SignUpActivity.class));
-        });
-
-        binding.layLogin.signinbutton.setOnClickListener(view -> {
-                login();
-        });
+        binding.layLogin.signinbutton.setOnClickListener(view -> login());
 
     }
 
@@ -87,6 +81,28 @@ public class ActivityLogin extends AppCompatActivity {
 
         if(valid() && validatePass()){
 
+            progressDialog = new ProgressDialog(ActivityLogin.this);
+            progressDialog.setMax(100);
+            progressDialog.setMessage("Please wait as we log you in");
+            progressDialog.setTitle("Login");
+            progressDialog.show();
+
+            String email = binding.layLogin.Name.getText().toString().trim();
+            String pass  = binding.layLogin.password.getText().toString().trim();
+
+            mAuth.signInWithEmailAndPassword(email, pass)
+                    .addOnCompleteListener(task -> {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
+                            progressDialog.cancel();
+                            Intent intent = new Intent(ActivityLogin.this, MainActivity.class);
+                            startActivity(intent);
+                        }
+                        else {
+                            progressDialog.cancel();
+                            Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
+                        }
+                    });
 
         }
 
@@ -104,12 +120,12 @@ public class ActivityLogin extends AppCompatActivity {
 
                     Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
                     try {
-                        // Google Sign In was successful, authenticate with Firebase
                         GoogleSignInAccount account = task.getResult(ApiException.class);
                         Log.d(TAG, "firebaseAuthWithGoogle:" + account.getId());
                         firebaseAuthWithGoogle(account.getIdToken());
                     } catch (ApiException e) {
-                        // Google Sign In failed, update UI appropriately
+                        Toast.makeText(getApplicationContext(), "Google sign in failed", Toast.LENGTH_LONG).show();
+
                         Log.w(TAG, "Google sign in failed", e);
                     }
 
@@ -122,19 +138,15 @@ public class ActivityLogin extends AppCompatActivity {
     private void firebaseAuthWithGoogle(String idToken) {
         AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
         mAuth.signInWithCredential(credential)
-                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
-                            Log.d(TAG, "signInWithCredential:success");
-                            FirebaseUser user = mAuth.getCurrentUser();
-                            Intent intent = new Intent(ActivityLogin.this, MainActivity.class);
-                            startActivity(intent);
-                        } else {
-                            // If sign in fails, display a message to the user.
-                            Toast.makeText(ActivityLogin.this,"Google SignIn Failed",Toast.LENGTH_SHORT).show();
-                        }
+                .addOnCompleteListener(this, task -> {
+                    if (task.isSuccessful()) {
+                        // Sign in success, update UI with the signed-in user's information
+                        Log.d(TAG, "signInWithCredential:success");
+                        Intent intent = new Intent(ActivityLogin.this, MainActivity.class);
+                        startActivity(intent);
+                    } else {
+                        // If sign in fails, display a message to the user.
+                        Toast.makeText(ActivityLogin.this,"Google SignIn Failed",Toast.LENGTH_SHORT).show();
                     }
                 });
     }

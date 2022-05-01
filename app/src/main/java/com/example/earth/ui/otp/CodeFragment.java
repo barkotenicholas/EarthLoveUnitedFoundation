@@ -1,6 +1,5 @@
 package com.example.earth.ui.otp;
 
-import static android.service.controls.ControlsProviderService.TAG;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
@@ -16,12 +15,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.example.earth.R;
 import com.example.earth.databinding.FragmentCodeBinding;
 import com.example.earth.models.UserProfile;
-import com.example.earth.ui.signup.SignUpActivity;
+import com.example.earth.ui.login.ActivityLogin;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -38,55 +35,63 @@ import java.util.concurrent.TimeUnit;
 
 public class CodeFragment extends Fragment {
 
+    public static final String TAG = CodeFragment.class.getName();
+
+    FragmentCodeBinding binding;
+
     private FirebaseAuth mAuth;
     private PhoneAuthProvider.ForceResendingToken mResendToken;
-    FragmentCodeBinding binding;
-    private String mVerificationId;
-    private static final String KEY_VERIFICATION_ID = "key_verification_id";
-    ProgressDialog progressDoalog;
-    UserProfile userProfile;
     FirebaseDatabase database = FirebaseDatabase.getInstance();
     DatabaseReference myRef;
+
+    private String mVerificationId;
+    private static final String KEY_VERIFICATION_ID = "key_verification_id";
+
+    ProgressDialog progressDialog;
+
+    UserProfile userProfile;
+
     public CodeFragment() {
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentCodeBinding.inflate(inflater,container,false);
+
         mAuth = FirebaseAuth.getInstance();
 
+        assert getArguments() != null;
         userProfile = (UserProfile) getArguments().getSerializable("CODE");
+
         if (mVerificationId == null && savedInstanceState != null) {
             savedInstanceState.getString(KEY_VERIFICATION_ID);
         }
         if(userProfile != null){
+
             Toast.makeText(getContext(),"Sending sms",Toast.LENGTH_LONG).show();
-          //signUp(userProfile);
+            signUp(userProfile);
+
         }
 
-
         binding.otpCodeNext.setOnClickListener(view -> {
-            progressDoalog = new ProgressDialog(getContext());
-            progressDoalog.setMax(100);
-            progressDoalog.setMessage("Its loading....");
-            progressDoalog.setTitle("Button clicked");
-            progressDoalog.show();
-            createAccount();
-            /*String code =binding.pinview.getText().toString();
+
+
+
+
+            String code =binding.pinview.getText().toString();
             Log.d("TAG", "onCreateView: "+code+" "+code.length());
             if(!code.isEmpty()){
                 if(code.length() == 6){
 
-                    progressDoalog = new ProgressDialog(getContext());
-                    progressDoalog.setMax(100);
-                    progressDoalog.setMessage("Its loading....");
-                    progressDoalog.setTitle("Button clicked");
-                    progressDoalog.show();
+                    progressDialog = new ProgressDialog(getContext());
+                    progressDialog.setMax(100);
+                    progressDialog.setMessage("Verifying");
+                    progressDialog.setTitle("S.M.S Verification");
+                    progressDialog.show();
                     verifyCode(code);
                 }
-            }*/
+            }
         });
         return binding.getRoot();
     }
@@ -95,10 +100,10 @@ public class CodeFragment extends Fragment {
 
         PhoneAuthOptions options =
                 PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber(userProfile.getPhone())       // Phone number to verify
-                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                        .setActivity((Activity) getContext())                 // Activity (for callback binding)
-                        .setCallbacks(getmCallbacks)          // OnVerificationStateChangedCallbacks
+                        .setPhoneNumber(userProfile.getPhone())
+                        .setTimeout(60L, TimeUnit.SECONDS)
+                        .setActivity((Activity) getContext())
+                        .setCallbacks(getmCallbacks)
                         .build();
         PhoneAuthProvider.verifyPhoneNumber(options);
     }
@@ -109,7 +114,7 @@ public class CodeFragment extends Fragment {
             String c = phoneAuthCredential.getSmsCode();
 
             Toast.makeText(getContext(),"Code verified",Toast.LENGTH_LONG).show();
-            progressDoalog.cancel();
+            progressDialog.cancel();
             Log.d("code", "onVerificationCompleted: " + c);
 
         }
@@ -123,7 +128,7 @@ public class CodeFragment extends Fragment {
         public void onCodeSent(@NonNull String verificationId,
                                @NonNull PhoneAuthProvider.ForceResendingToken token) {
 
-            Log.d("TAG", "onCodeSent:" + verificationId);
+            Log.d(TAG, "onCodeSent:" + verificationId);
 
             mVerificationId  = verificationId;
             mResendToken = token;
@@ -132,7 +137,6 @@ public class CodeFragment extends Fragment {
 
     private void verifyCode(String c) {
         PhoneAuthCredential credential = PhoneAuthProvider.getCredential(mVerificationId, c);
-
         signInWithCred(credential);
     }
 
@@ -143,12 +147,9 @@ public class CodeFragment extends Fragment {
 
             if(task.isSuccessful()){
                 Toast.makeText(getContext(), "Verified", Toast.LENGTH_SHORT).show();
-
-
-
+                createAccount();
             }else {
                 Toast.makeText(getContext(), "Not Verified", Toast.LENGTH_SHORT).show();
-
             }
 
         });
@@ -159,15 +160,11 @@ public class CodeFragment extends Fragment {
         mAuth.createUserWithEmailAndPassword(userProfile.getEmail(), userProfile.getPass())
                 .addOnCompleteListener((Activity) getContext(), (OnCompleteListener<AuthResult>) task -> {
                     if (task.isSuccessful()) {
-                        // Sign in success, update UI with the signed-in user's information
-
                         saveUsersInfo();
-
                     } else {
-                        // If sign in fails, display a message to the user.
+                        Toast.makeText(getContext(),"Failed to register user info",Toast.LENGTH_SHORT).show();
+
                         Log.w(TAG, "signInWithEmail:failure", task.getException());
-
-
                     }
                 });
 
@@ -184,7 +181,10 @@ public class CodeFragment extends Fragment {
 
         myRef.setValue(users);
 
-        progressDoalog.cancel();
+        progressDialog.cancel();
+        Toast.makeText(getContext(),"User registered successfully",Toast.LENGTH_SHORT).show();
+
+        startActivity(new Intent(getContext(), ActivityLogin.class));
     }
 
     @Override
