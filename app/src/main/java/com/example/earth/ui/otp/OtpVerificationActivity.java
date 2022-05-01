@@ -26,8 +26,7 @@ public class OtpVerificationActivity extends AppCompatActivity {
 
         Intent intent= getIntent();
         userProfile = (UserProfile) intent.getSerializableExtra("EXTRA");
-        String code = intent.getStringExtra("CODE");
-        OtpAdapter adapter = new OtpAdapter(getSupportFragmentManager(),getLifecycle(),code);
+        OtpAdapter adapter = new OtpAdapter(getSupportFragmentManager(),getLifecycle(),userProfile);
         otpVerificationBinding.otpViewPager.setAdapter(adapter);
     }
 }

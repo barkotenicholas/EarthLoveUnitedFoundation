@@ -8,13 +8,14 @@ import androidx.fragment.app.FragmentManager;
 import androidx.lifecycle.Lifecycle;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 
+import com.example.earth.models.UserProfile;
 import com.example.earth.ui.otp.CodeFragment;
 
 public class OtpAdapter extends FragmentStateAdapter {
 
-    String code;
+    UserProfile code;
 
-    public OtpAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle, String code) {
+    public OtpAdapter(@NonNull FragmentManager fragmentManager, @NonNull Lifecycle lifecycle, UserProfile code) {
         super(fragmentManager, lifecycle);
         this.code = code;
     }
@@ -24,7 +25,7 @@ public class OtpAdapter extends FragmentStateAdapter {
     public Fragment createFragment(int position) {
         Bundle bundle = new Bundle();
         CodeFragment codeFragment = new CodeFragment();
-        bundle.putString("CODE", this.code);
+        bundle.putSerializable("CODE", this.code);
         codeFragment.setArguments(bundle);
 
         return codeFragment;

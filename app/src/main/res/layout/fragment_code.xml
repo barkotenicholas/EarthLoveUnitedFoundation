@@ -42,21 +42,22 @@
             app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
 
             <com.chaos.view.PinView
+                android:id="@+id/pinview"
+                style="@style/PinWidget.PinView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:inputType="number"
                 android:itemBackground="@color/earthLighterDark"
-                app:itemCount="5"
+                android:textColor="@color/white"
+                android:textSize="20dp"
+                app:itemCount="6"
                 app:itemHeight="70dp"
-                app:itemWidth="60dp"
                 app:itemRadius="4dp"
                 app:itemSpacing="0dp"
-                android:textSize="20dp"
-                android:textColor="@color/white"
+                app:itemWidth="60dp"
                 app:lineColor="@color/white"
-                app:viewType="rectangle"
-                style="@style/PinWidget.PinView"/>
+                app:viewType="rectangle" />
         </LinearLayout>
 
         <LinearLayout
@@ -79,8 +80,7 @@
                 android:text="NEXT"
                 android:textColor="@color/earthDark"
                 android:textSize="16sp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="342dp" />
+                />
 
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

@@ -27,9 +27,10 @@ public class SignUpActivity extends AppCompatActivity {
 
     private ActivitySignUpBinding signUpBinding;
     private FirebaseAuth mAuth;
-    private PhoneAuthProvider.ForceResendingToken mResendToken;
-    private String mVerificationId;
+
     Intent intent;
+    UserProfile userProfile;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,15 +42,19 @@ public class SignUpActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
 
+        signUpBinding.signButton.setOnClickListener(view1 -> {
 
+            signUpBinding.countryCodeHolder.registerCarrierNumberEditText(signUpBinding.phoneNumberEdit);
 
-
-        signUpBinding.signButton.setOnClickListener( view1->{
             String name = signUpBinding.nameEditText.getText().toString().trim();
             String email = signUpBinding.emailEditText.getText().toString().trim();
             String password = signUpBinding.userPassword.getText().toString().trim();
             String confirmPassword = signUpBinding.confirmPassword.getText().toString().trim();
-            String phoneNumber =signUpBinding.phoneNumberEdit.getText().toString().trim();
+            String code = signUpBinding.countryCodeHolder.getFullNumber();
+            String num = "+" + code;
+
+            Toast.makeText(SignUpActivity.this, " " + num + " ", Toast.LENGTH_SHORT).show();
+
             boolean validEmail = isValidEmail(email);
             boolean validName = isValidName(name);
             boolean validPassword = isValidPassword(password, confirmPassword);
@@ -59,56 +64,22 @@ public class SignUpActivity extends AppCompatActivity {
                 return;
             }
 
-            UserProfile userProfile = new UserProfile();
+            userProfile = new UserProfile();
             userProfile.setName(name);
             userProfile.setEmail(email);
             userProfile.setPass(password);
-            userProfile.setPhone(phoneNumber);
-            intent = new Intent(getApplicationContext(), OtpVerificationActivity.class);
-            intent.putExtra("EXTRA",userProfile);
-            signUp(userProfile);
+            userProfile.setPhone(num);
+            intent = new Intent(SignUpActivity.this, OtpVerificationActivity.class);
+            intent.putExtra("EXTRA", userProfile);
+            startActivity(intent);
+
+
 
 
         });
     }
 
-    private void signUp(UserProfile userProfile) {
 
-        PhoneAuthOptions options =
-                PhoneAuthOptions.newBuilder(mAuth)
-                        .setPhoneNumber(userProfile.getPhone())       // Phone number to verify
-                        .setTimeout(60L, TimeUnit.SECONDS) // Timeout and unit
-                        .setActivity(this)                 // Activity (for callback binding)
-                        .setCallbacks(getmCallbacks)          // OnVerificationStateChangedCallbacks
-                        .build();
-        PhoneAuthProvider.verifyPhoneNumber(options);
-    }
-
-    private PhoneAuthProvider.OnVerificationStateChangedCallbacks getmCallbacks = new PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-        @Override
-        public void onVerificationCompleted(@NonNull PhoneAuthCredential phoneAuthCredential) {
-                String c = phoneAuthCredential.getSmsCode();
-                if(c != null){
-
-                    intent.putExtra("CODE", c);
-                    startActivity(intent);
-                }
-        }
-
-        @Override
-        public void onVerificationFailed(@NonNull FirebaseException e) {
-            Toast.makeText(SignUpActivity.this,"Error could not verify phone",Toast.LENGTH_SHORT).show();
-        }
-        @Override
-        public void onCodeSent(@NonNull String verificationId,
-                               @NonNull PhoneAuthProvider.ForceResendingToken token) {
-
-            Log.d("TAG", "onCodeSent:" + verificationId);
-
-            mVerificationId = verificationId;
-            mResendToken = token;
-        }
-    };
 
     private boolean isValidEmail(String Email) {
 
@@ -128,7 +99,7 @@ public class SignUpActivity extends AppCompatActivity {
             return false;
         }
 
-        if(!name.matches("([a-zA-z]+|[a-zA-Z]+\\s[a-zA-Z]+)*")){
+        if (!name.matches("([a-zA-z]+|[a-zA-Z]+\\s[a-zA-Z]+)*")) {
             signUpBinding.nameEditText.getText().clear();
             signUpBinding.nameEditText.setError("Kindly give a valid name");
             return false;
