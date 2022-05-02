@@ -18,6 +18,7 @@ import android.widget.Toast;
 import com.example.earth.databinding.FragmentCodeBinding;
 import com.example.earth.models.UserProfile;
 import com.example.earth.ui.login.ActivityLogin;
+import com.example.earth.ui.signup.SignUpActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.firebase.FirebaseException;
 import com.google.firebase.auth.AuthResult;
@@ -75,8 +76,6 @@ public class CodeFragment extends Fragment {
         }
 
         binding.otpCodeNext.setOnClickListener(view -> {
-
-
 
 
             String code =binding.pinview.getText().toString();
@@ -149,7 +148,8 @@ public class CodeFragment extends Fragment {
                 Toast.makeText(getContext(), "Verified", Toast.LENGTH_SHORT).show();
                 createAccount();
             }else {
-                Toast.makeText(getContext(), "Not Verified", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getContext(), "Not Verified retry please", Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(getContext(), SignUpActivity.class));
             }
 
         });
