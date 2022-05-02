@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Earth</string>
+
+    <string name="elu_logo">ELU logo</string>
+    <string name="learn_about_the_climate_crises_connect_with_like_minded_people">Learn about the climate crises + connect with like-minded people.</string>
     <string name="title_activity_otp_verification">OtpVerificationActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>

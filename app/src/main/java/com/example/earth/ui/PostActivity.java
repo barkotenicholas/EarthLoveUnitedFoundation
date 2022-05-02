@@ -1,4 +1,4 @@
-package com.example.earth;
+package com.example.earth.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,9 @@ import android.view.View;
 import com.example.earth.databinding.ActivityMainBinding;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class MainActivity extends AppCompatActivity {
+import com.example.earth.R;
+
+public class PostActivity extends AppCompatActivity {
 
 
     ActivityMainBinding binding;
