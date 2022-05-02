@@ -17,6 +17,7 @@
         <entry key="app/src/main/res/layout/fragment_interests.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_share_contacts.xml" value="0.171875" />
+        <entry key="app/src/main/res/layout/interest_item.xml" value="0.11296296296296296" />
       </map>
     </option>
   </component>
