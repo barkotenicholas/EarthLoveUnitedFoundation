@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.earth">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,16 +12,46 @@
         android:theme="@style/Theme.Earth.NoActionBar">
         <activity
             android:name=".ui.SplashActivity"
+            android:exported="true"/>
+        <activity
+                android:name=".ui.otp.OtpVerificationActivity"
+                android:exported="false"
+                android:theme="@style/Theme.Earth.NoActionBar"/>
+        <activity
+            android:name=".ui.signup.SignUpActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Earth.NoActionBar"/>
+        <activity
+            android:name=".PhoneConfirmation"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityPhone"
+            android:exported="false" />
+        <activity
+            android:name=".ActivityRegister"
+            android:exported="false" />
+        <activity
+            android:name=".ui.signup.ResetPassword"
+            android:exported="false" />
+        <activity
+            android:name=".ui.login.ActivityLogin"
             android:exported="true">
 
-        <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-    </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.LaunchActivity"
             android:exported="false" />
+
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts"
+            android:exported="true" />
     </application>
 
 </manifest>
