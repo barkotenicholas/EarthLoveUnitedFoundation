@@ -14,4 +14,5 @@
     <color name="earthDark"> #121212</color>
     <color name="earthLighterDark">#262626</color>
     <color name="earthLightestDark">#4F4F4F</color>
+    <color name="gray">#4A808080</color>
 </resources>

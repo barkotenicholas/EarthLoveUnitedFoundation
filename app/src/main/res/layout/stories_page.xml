@@ -7,8 +7,11 @@
 
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/storyOutline"
         android:layout_width="55dp"
         android:layout_height="55dp"
+        android:layout_marginLeft="20dp"
+        app:cardBackgroundColor="@color/white"
         app:cardCornerRadius="27dp">
 
         <androidx.cardview.widget.CardView
@@ -28,6 +31,8 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_marginLeft="14dp"
         android:text="Priscah Limo"
         android:layout_gravity="center"/>
 

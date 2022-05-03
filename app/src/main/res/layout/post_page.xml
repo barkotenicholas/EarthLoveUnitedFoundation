@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/earthDark"
+    >
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/frame"
+        android:orientation="vertical">
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/postOutline"
+            android:layout_width="match_parent"
+            android:layout_height="494dp"
+            android:layout_gravity="center"
+            android:layout_weight="0.5"
+            app:cardCornerRadius="5dp"
+            app:cardElevation="5dp"
+            app:cardUseCompatPadding="true">
+
+
+            <ImageView
+                android:id="@+id/iv_overlay"
+                android:layout_width="match_parent"
+                android:layout_height="476dp"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/studyphoto" />
+
+            <LinearLayout
+                android:id="@+id/usernametop"
+                android:layout_width="340dp"
+                android:layout_height="86dp"
+                android:orientation="horizontal">
+
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="55dp"
+                    android:layout_height="55dp"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="25dp">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/face" />
+
+                </androidx.cardview.widget.CardView>
+
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="70dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="Priscah"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/hours"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:text="2hr"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/housebottom"
+                android:layout_width="319dp"
+                android:layout_height="181dp"
+                android:layout_gravity="bottom"
+                android:orientation="vertical">
+
+
+                <RelativeLayout
+                    android:id="@+id/buttonslay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginEnd="13dp"
+                    android:padding="8dp">
+
+                    <ImageView
+                        android:id="@+id/liketab"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/ic_action_name" />
+
+                    <ImageView
+                        android:id="@+id/commenttab"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/liketab"
+                        android:src="@drawable/message" />
+
+                    <ImageView
+                        android:id="@+id/repeattab"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_toEndOf="@+id/commenttab"
+                        android:src="@drawable/repeat" />
+
+                    <ImageView
+                        android:id="@+id/moretab"
+                        android:layout_width="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginStart="2dp"
+                        android:layout_toEndOf="@+id/repeattab"
+                        android:src="@drawable/more" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/likesrelative"
+                    android:layout_width="381dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@+id/buttonslay"
+                    android:layout_alignParentEnd="true">
+
+
+                    <TextView
+                        android:id="@+id/description"
+                        android:layout_width="296dp"
+                        android:layout_height="81dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="20sp"
+
+                        android:layout_marginBottom="19dp"
+                        android:text="Trying to reuse all of my paper and plastics products. How do you?
+                                    #reuse #recycle#geafriendly"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:id="@+id/likes"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="13dp"
+                        android:text="1600 Likes"
+                        android:textColor="@color/white"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/comments"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginEnd="83dp"
+                        android:layout_marginBottom="12dp"
+                        android:text="15 Comments"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+
+
+
+    </FrameLayout>
+
+
+    </LinearLayout>
+
+
