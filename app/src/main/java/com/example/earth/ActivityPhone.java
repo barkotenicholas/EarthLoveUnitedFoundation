@@ -1,10 +1,9 @@
 package com.example.earth;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.earth.databinding.ActivityPhoneBinding;
 import com.example.earth.models.UserProfile;

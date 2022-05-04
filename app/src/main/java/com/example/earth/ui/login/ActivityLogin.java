@@ -40,7 +40,7 @@ public class ActivityLogin extends AppCompatActivity {
     private FirebaseAuth mAuth;
 
     private ProgressDialog progressDialog;
-    String emailRegex = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]";
+    String emailRegex = "^[a-zA-Z0-9_!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,7 +79,7 @@ public class ActivityLogin extends AppCompatActivity {
 
     private void login() {
 
-        if(valid() && validatePass()){
+        if( valid() && validatePass() ){
 
             progressDialog = new ProgressDialog(ActivityLogin.this);
             progressDialog.setMax(100);
@@ -156,11 +156,13 @@ public class ActivityLogin extends AppCompatActivity {
         String email  = binding.layLogin.Name.getText().toString().trim();
 
         if(email.isEmpty()){
+            binding.layLogin.Name.getText().clear();
             binding.layLogin.Name.setError("Please input email");
+
             return false;
         }else if(!email.matches(emailRegex)){
-            binding.layLogin.Name.setError("Invalid Email!");
             binding.layLogin.Name.getText().clear();
+            binding.layLogin.Name.setError("Invalid Email!");
             return false;
         }else {
             binding.layLogin.Name.setError(null);
@@ -172,8 +174,8 @@ public class ActivityLogin extends AppCompatActivity {
     public boolean validatePass(){
         String pass   = binding.layLogin.password.getText().toString().trim();
         if(pass.isEmpty()){
-            binding.layLogin.password.setError("Please input password");
             binding.layLogin.password.getText().clear();
+            binding.layLogin.password.setError("Please input password");
             return false;
         }else {
             binding.layLogin.password.setError(null);
