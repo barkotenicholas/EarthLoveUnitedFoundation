@@ -1,5 +1,6 @@
 package com.example.earth.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -50,9 +51,8 @@ public class InterestsFragment extends Fragment {
         binding.notNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.interestFrameLayout,new ClubsFragment());
-                transaction.commit();
+                Intent intent=new Intent(getActivity().getApplicationContext(),MainActivity.class);
+                startActivity(intent);
             }
         });
         return binding.getRoot();}

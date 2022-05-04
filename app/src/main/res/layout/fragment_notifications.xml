@@ -44,7 +44,7 @@
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/enableNotificationsButton"
-        android:layout_width="400dp"
+        android:layout_width="320dp"
 
         android:layout_height="wrap_content"
         android:layout_marginBottom="12dp"
@@ -55,7 +55,7 @@
         android:text="ENABLE NOTIFICATIONS"
         android:textColor="@color/earthLighterDark"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/notNow"
+        app:layout_constraintBottom_toTopOf="@+id/notificationNotNow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -63,8 +63,8 @@
         />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/notNow"
-        android:layout_width="400dp"
+        android:id="@+id/notificationNotNow"
+        android:layout_width="320dp"
 
         android:layout_height="wrap_content"
         android:layout_marginBottom="36dp"

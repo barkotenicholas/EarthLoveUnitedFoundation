@@ -21,7 +21,7 @@ FragmentNotificationsBinding binding;
                              Bundle savedInstanceState) {
 
         binding=FragmentNotificationsBinding.inflate(inflater, container, false);
-        binding.notNow.setOnClickListener(new View.OnClickListener() {
+        binding.notificationNotNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
