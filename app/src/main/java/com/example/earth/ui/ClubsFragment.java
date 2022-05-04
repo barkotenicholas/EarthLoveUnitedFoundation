@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -48,11 +49,22 @@ public class ClubsFragment extends Fragment {
             dataList= binding.clubsRecycler;
             dataList.setLayoutManager(gridLayoutManager);
             dataList.setAdapter( clubsAdapter);
+            Log.d("before click","not yet clicked");
             binding.notNow.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent=new Intent(getActivity(),MainActivity.class);
-                    startActivity(intent);
+                    FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.ClubsFrameLayout,new NotificationsFragment());
+                    transaction.commit();
+                    Log.d("after click","not yet clicked");
+                }
+            });
+            binding.next.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
+                    transaction.replace(R.id.ClubsFrameLayout,new NotificationsFragment());
+                    transaction.commit();
                 }
             });
     }

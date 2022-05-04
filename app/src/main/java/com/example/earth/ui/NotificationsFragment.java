@@ -19,18 +19,16 @@ FragmentNotificationsBinding binding;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_notifications, container, false);
-//        binding=FragmentNotificationsBinding.inflate(inflater, container, false);
-//        binding.notNow.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                ShareContactsFragment shareContactsFragment=new ShareContactsFragment();
-//                FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-//                fragmentTransaction.replace(R.id.notificationFrameLayout, shareContactsFragment);
-//                fragmentTransaction.addToBackStack(null);
-//                fragmentTransaction.commit();
-//            }
-//        });
-//        return binding.getRoot();}
+
+        binding=FragmentNotificationsBinding.inflate(inflater, container, false);
+        binding.notNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.notificationFrameLayout,new ShareContactsFragment());
+                transaction.commit();
+            }
+        });
+        return binding.getRoot();}
       }
-    }
+

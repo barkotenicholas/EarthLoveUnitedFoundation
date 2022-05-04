@@ -50,11 +50,9 @@ public class InterestsFragment extends Fragment {
         binding.notNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ClubsFragment clubsFragment=new ClubsFragment();
-                FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.interestFrameLayout, clubsFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.interestFrameLayout,new ClubsFragment());
+                transaction.commit();
             }
         });
         return binding.getRoot();}

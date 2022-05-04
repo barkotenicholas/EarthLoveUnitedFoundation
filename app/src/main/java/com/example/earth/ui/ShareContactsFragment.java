@@ -24,11 +24,10 @@ FragmentShareContactsBinding binding;
         binding.notNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DisplayProfileFragment displayProfileFragment=new DisplayProfileFragment();
-                FragmentTransaction fragmentTransaction = getParentFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.shareContactsFrameLayout, displayProfileFragment);
-                fragmentTransaction.addToBackStack(null);
-                fragmentTransaction.commit();
+                FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.shareContactsFrameLayout,new DisplayProfileFragment());
+                transaction.commit();
+
             }
         });
         return binding.getRoot();}

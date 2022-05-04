@@ -52,9 +52,7 @@ ActivityResult activityResult;
                 FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.createProfileFragment,new InterestsFragment());
                 transaction.commit();
-//                AppCompatActivity activity=(AppCompatActivity)view.getContext();
-//                InterestsFragment InterestsFragment=new InterestsFragment();
-//                activity.getSupportFragmentManager().beginTransaction().replace(R.id.createProfileViewPager,InterestsFragment).addToBackStack(null).commit();
+
 //                User newUser=new User(binding.nameEditText.getText().toString(),binding.BirthdayEditText.getText().toString(),binding.locationEditText.getText().toString(),binding.MyStoryEditText.getText().toString(),binding.pronounsEditText.getText().toString(),binding.WebsiteEditText.getText().toString(),sendUri);
 //                Bundle bundle = new Bundle();
 ////                bundle.putString("Birthday",binding.BirthdayEditText.getText().toString());
@@ -83,23 +81,6 @@ private ActivityResultLauncher startForProfileImageResult=registerForActivityRes
                 }
             }
         });
-//private val startForProfileImageResult =
-//        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result: ActivityResult ->
-//            val resultCode = result.resultCode
-//        val data = result.data
-//
-//        if (resultCode == Activity.RESULT_OK) {
-//            //Image Uri will not be null for RESULT_OK
-//            val fileUri = data?.data!!
-//
-//                    mProfileUri = fileUri
-//            imgProfile.setImageURI(fileUri)
-//        } else if (resultCode == ImagePicker.RESULT_ERROR) {
-//            Toast.makeText(this, ImagePicker.getError(data), Toast.LENGTH_SHORT).show()
-//        } else {
-//            Toast.makeText(this, "Task Cancelled", Toast.LENGTH_SHORT).show()
-//        }
-//    }
 
 }
 
