@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout2"
+    android:id="@+id/ClubsFrameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/earthLighterDark"
@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="sans-serif"
-        android:text="Tap a cause you c are about."
+        android:text="Tap a cause you care about."
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/white"
@@ -41,136 +41,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/clubsH1" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:background="@drawable/white_round_buttons"
-        android:backgroundTint="@drawable/white_round_buttons"
-        android:text="#AnimalLove"
-        android:textColor="@color/earthDark"
-        app:layout_constraintStart_toStartOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:backgroundTint="@color/white"
-        android:text="#ActionKnow"
-        android:textColor="@color/earthDark"
-        app:layout_constraintStart_toEndOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button" />
-
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
-        android:text="#ELUTeam"
-        android:textColor="@color/earthDark"
-        app:layout_constraintStart_toStartOf="@+id/button"
-        app:layout_constraintTop_toTopOf="@+id/button4" />
-
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/white"
-        android:text="#Weather"
-        android:textColor="@color/earthDark"
-        app:layout_constraintEnd_toStartOf="@+id/button5"
-        app:layout_constraintStart_toEndOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button2" />
-
-    <Button
-        android:id="@+id/button5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="20dp"
-        android:backgroundTint="@color/white"
-        android:text="#Recycle"
-        android:textColor="@color/earthDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button4" />
-
-    <Button
-        android:id="@+id/button6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/white"
-        android:text="#IslandToday"
-        android:textColor="@color/earthDark"
-        app:layout_constraintStart_toStartOf="@+id/button3"
-        app:layout_constraintTop_toBottomOf="@+id/button4" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:layout_marginStart="16dp"
-        android:backgroundTint="@color/white"
-        android:text="#H20Club"
-
-        android:textColor="@color/earthDark"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/button8" />
-
-    <Button
-        android:id="@+id/button8"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:backgroundTint="@color/white"
-        android:text="#DefendEarth"
-        android:textColor="@color/earthDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/selectCause" />
-
-    <Button
-        android:id="@+id/button9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:backgroundTint="@color/white"
-        android:text="#SaveOurTurtles"
-        android:textColor="@color/earthDark"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.069"
-        app:layout_constraintStart_toEndOf="@+id/button6"
-        app:layout_constraintTop_toTopOf="@+id/button6" />
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/next"
-        android:layout_width="400dp"
+        android:layout_width="320dp"
 
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-
-
-        android:backgroundTint="@color/earthLighterGreen"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/grey_round_buttons"
         android:text="NEXT"
         android:textColor="@color/earthLighterDark"
         android:textStyle="bold"
-        android:background="@drawable/green_rounded_corner"
-
-        app:backgroundTint="@color/earthLighterGreen"
         app:layout_constraintBottom_toTopOf="@+id/notNow"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button9"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/notNow"
-        android:layout_width="400dp"
+        android:layout_width="320dp"
 
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -179,10 +67,22 @@
         android:textColor="@color/earthGreen"
 
         android:textStyle="bold"
-        app:backgroundTint="@drawable/green_rounded_corner"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/next"
         app:layout_constraintStart_toStartOf="@+id/next" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/clubsRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="480dp"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="22dp"
+        app:layout_constraintBottom_toTopOf="@+id/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.476"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/selectCause"
+        app:layout_constraintVertical_bias="0.0" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

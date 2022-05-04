@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/frameLayout"
+    android:id="@+id/interestFrameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/earthLighterDark"
@@ -14,8 +14,9 @@
         android:id="@+id/createH1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
         android:text="Hi,Julia.What do you care about?"
-        android:textAlignment="center"
+        android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Display1"
         android:textColor="@color/earthGreen"
         android:textSize="36sp"
@@ -28,105 +29,38 @@
         android:id="@+id/select"
         android:layout_width="328dp"
         android:layout_height="33dp"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="7dp"
         android:fontFamily="sans-serif"
         android:text="Select interests to start."
         android:textAlignment="viewStart"
         android:textAppearance="@style/TextAppearance.AppCompat.Display2"
         android:textColor="@color/earthLightestGreen"
-        android:textSize="28sp"
+        android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.195"
+        app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/createH1" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="180dp"
-        android:layout_height="100dp"
-        android:layout_marginStart="16dp"
-        android:src="@drawable/fields_round_corner"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView5" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="180dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="16dp"
-        android:src="@drawable/fields_round_corner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/select" />
-
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="180dp"
-        android:layout_height="100dp"
-        android:src="@drawable/fields_round_corner"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.542"
-        app:layout_constraintStart_toEndOf="@+id/imageView7"
-        app:layout_constraintTop_toBottomOf="@+id/imageView9"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="180dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/fields_round_corner"
-        app:layout_constraintEnd_toEndOf="@+id/imageView4"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView4"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
-    <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="180dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="25dp"
-        android:layout_marginBottom="24dp"
-        android:src="@drawable/fields_round_corner"
-        app:layout_constraintBottom_toTopOf="@+id/next"
-        app:layout_constraintEnd_toEndOf="@+id/imageView7"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView7" />
-
-    <ImageView
-        android:id="@+id/imageView9"
-        android:layout_width="180dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="32dp"
-        android:src="@drawable/fields_round_corner"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/imageView5"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
-
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/next"
-        android:layout_width="400dp"
+        android:layout_width="320dp"
 
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:background="@drawable/green_rounded_corner"
+        android:background="@drawable/grey_round_buttons"
 
         android:text="NEXT"
         android:textColor="@color/earthLighterDark"
         android:textStyle="bold"
-        app:backgroundTint="@color/earthLightestDark"
+
         app:layout_constraintBottom_toTopOf="@+id/notNow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <Button
+    <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/notNow"
-        android:layout_width="400dp"
+        android:layout_width="320dp"
 
         android:layout_height="wrap_content"
         android:layout_marginBottom="24dp"
@@ -135,10 +69,23 @@
         android:textColor="@color/earthGreen"
 
         android:textStyle="bold"
-        app:backgroundTint="@drawable/green_rounded_corner"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/next"
         app:layout_constraintStart_toStartOf="@+id/next" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/interestRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="460dp"
+        android:layout_marginTop="7dp"
+        android:layout_marginBottom="7dp"
+        app:layout_constraintBottom_toTopOf="@+id/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/select"
+        app:layout_constraintVertical_bias="0.177" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
