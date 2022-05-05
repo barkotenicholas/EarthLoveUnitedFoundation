@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.example.earth.Fragments.ConnectFragment;
+import com.example.earth.Fragments.HomeFragment;
 import com.example.earth.Fragments.InboxFragment;
 import com.example.earth.Fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             switch (item.getItemId()){
                 case R.id.nav_home:
-                    startActivity(new Intent(MainActivity.this, HomeActivity.class));
+                    selectedFragment = new HomeFragment();
                     break;
                 case R.id.nav_connect:
                     selectedFragment = new ConnectFragment();

@@ -10,7 +10,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.earth.R;
-import com.example.earth.story;
+import com.example.earth.models.story;
 
 import java.util.List;
 

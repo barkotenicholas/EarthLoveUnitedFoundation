@@ -1,4 +1,4 @@
-package com.example.earth;
+package com.example.earth.models;
 
 public class story {
 

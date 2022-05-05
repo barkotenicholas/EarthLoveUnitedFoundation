@@ -11,41 +11,41 @@
 
 
             <!--        &lt;!&ndash;tittle nav&ndash;&gt;-->
-                <LinearLayout
-                    android:id="@+id/titlelayout"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+<!--                <LinearLayout-->
+<!--                    android:id="@+id/titlelayout"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
 
 
-                    <include layout="@layout/title_nav_bar" />
+<!--                    <include layout="@layout/title_nav_bar" />-->
 
-               </LinearLayout>
+<!--               </LinearLayout>-->
 
-            <androidx.core.widget.NestedScrollView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+<!--            <androidx.core.widget.NestedScrollView-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/storiesrecycler">
-
-
-                </androidx.recyclerview.widget.RecyclerView>
-            </androidx.core.widget.NestedScrollView>
-
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/postsrecycler">
+<!--                <androidx.recyclerview.widget.RecyclerView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:id="@+id/storiesrecycler">-->
 
 
-        </androidx.recyclerview.widget.RecyclerView>
-    </androidx.core.widget.NestedScrollView>
+<!--                </androidx.recyclerview.widget.RecyclerView>-->
+<!--            </androidx.core.widget.NestedScrollView>-->
+
+<!--    <androidx.core.widget.NestedScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <androidx.recyclerview.widget.RecyclerView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/postsrecycler">-->
+
+
+<!--        </androidx.recyclerview.widget.RecyclerView>-->
+<!--    </androidx.core.widget.NestedScrollView>-->
 
         </LinearLayout>
 
