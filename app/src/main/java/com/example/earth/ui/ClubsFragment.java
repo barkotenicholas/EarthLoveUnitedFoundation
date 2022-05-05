@@ -3,6 +3,7 @@ package com.example.earth.ui;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -27,7 +28,7 @@ import java.util.List;
 
 
 public class ClubsFragment extends Fragment {
-    FragmentClubsBinding binding;
+    FragmentClubsBinding clubsBinding;
     RecyclerView dataList;
     clubsAdapter clubsAdapter;
     List<String> clubLabels;
@@ -38,8 +39,16 @@ public class ClubsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        binding=  FragmentClubsBinding.inflate(inflater, container, false);
-        return binding.getRoot();
+        clubsBinding=  FragmentClubsBinding.inflate(inflater, container, false);
+
+        requireActivity().getOnBackPressedDispatcher().addCallback(getActivity(), new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                getActivity().getSupportFragmentManager().popBackStack();
+            }
+        });
+        return clubsBinding.getRoot();
+
     }
 
     @Override
@@ -49,28 +58,20 @@ public class ClubsFragment extends Fragment {
         clubsAdapter=new clubsAdapter(getContext(),clubLabels);
 
         GridLayoutManager gridLayoutManager=new GridLayoutManager(getContext(),1,GridLayoutManager.VERTICAL,false);
-        dataList= binding.clubsRecycler;
+        dataList= clubsBinding.clubsRecycler;
         dataList.setLayoutManager(gridLayoutManager);
         dataList.setAdapter( clubsAdapter);
         Log.d("before click","not yet clicked");
-        binding.clubNotNow.setOnClickListener(view1 -> {
-
-
-            FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
-            transaction.replace(R.id.ClubsFrameLayout,new NotificationsFragment());
-            transaction.commit();
-            Toast.makeText(getContext(),"clicked",Toast.LENGTH_LONG).show();
-            Log.d("after click","not yet clicked");
+        clubsBinding.clubNotNow.setOnClickListener(view1 -> {
+            startActivity(new Intent(getActivity(),MainActivity.class));
+            Toast.makeText(getActivity(),"NotNow",Toast.LENGTH_LONG).show();
+        });
+        clubsBinding.clubNext.setOnClickListener(view1 ->{
+            startActivity(new Intent(getActivity(),MainActivity.class));
+            Toast.makeText(getActivity(),"Next",Toast.LENGTH_LONG).show();
 
         });
-        binding.clubNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.ClubsFrameLayout,new NotificationsFragment());
-                transaction.commit();
-                Log.d("after click","not yet clicked");
-            }
-        });
+
     }
+
 }

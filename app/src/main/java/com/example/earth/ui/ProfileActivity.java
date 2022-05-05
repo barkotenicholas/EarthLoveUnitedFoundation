@@ -34,5 +34,5 @@ profileAdapter adapter;
         setContentView(binding.getRoot());
 
         adapter=new profileAdapter(getSupportFragmentManager(),getLifecycle());
-binding.createProfileViewPager.setAdapter(adapter);
+        binding.createProfileViewPager.setAdapter(adapter);
 }}

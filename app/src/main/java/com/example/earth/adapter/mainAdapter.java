@@ -18,7 +18,7 @@ public class mainAdapter  extends FragmentStateAdapter {
     @NonNull
     @Override
     public Fragment createFragment(int position) {
-        return new ClubsFragment();
+        return new NotificationsFragment();
     }
 
     @Override

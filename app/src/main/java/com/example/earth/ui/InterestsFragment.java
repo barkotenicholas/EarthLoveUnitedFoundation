@@ -3,6 +3,7 @@ package com.example.earth.ui;
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
@@ -14,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import com.example.earth.R;
 import com.example.earth.adapter.InterestsRecyclerviewAdapter;
@@ -41,21 +43,29 @@ public class InterestsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        binding=  FragmentInterestsBinding.inflate(inflater, container, false);
+        binding = FragmentInterestsBinding.inflate(inflater, container, false);
 //        Bundle bundle = this.getArguments();
 //        newUser=bundle.getParcelable("newUser");
 //        Bundle bundle1=new Bundle();
 //        bundle1.putParcelable("newUser1", Parcels.wrap(newUser));
 //        ClubsFragment ClubsFragment=new ClubsFragment();
 //        ClubsFragment.setArguments(bundle1);
-        binding.notNow.setOnClickListener(new View.OnClickListener() {
+
+        Fragment profileFragment = getActivity().getSupportFragmentManager().findFragmentById(R.id.createProfileFragment);
+        requireActivity().getOnBackPressedDispatcher().addCallback(getActivity(), new OnBackPressedCallback(true) {
             @Override
-            public void onClick(View view) {
-                Intent intent=new Intent(getActivity().getApplicationContext(),MainActivity.class);
-                startActivity(intent);
+            public void handleOnBackPressed() {
+
+                if (getActivity().getSupportFragmentManager().getBackStackEntryCount() > 0) {
+                    getActivity().getSupportFragmentManager().popBackStack();
+                } else {
+                    return;
+                }
             }
         });
-        return binding.getRoot();}
+        return binding.getRoot();
+
+    }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -67,6 +77,18 @@ public class InterestsFragment extends Fragment {
         dataList= binding.interestRecyclerView;
         dataList.setLayoutManager(gridLayoutManager);
         dataList.setAdapter(interestsRecyclerviewAdapter);
+        binding.notNow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.interestFrameLayout,new ClubsFragment());
+                transaction.addToBackStack("CLUBS");
+                transaction.commit();
+
+                Toast.makeText(getContext(),getContext().toString(),Toast.LENGTH_LONG).show();
+            }
+        });
+
     }
 
 }

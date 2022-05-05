@@ -51,6 +51,7 @@ ActivityResult activityResult;
             public void onClick(View view) {
                 FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.createProfileFragment,new InterestsFragment());
+                transaction.addToBackStack("INTERESTS");
                 transaction.commit();
 
 //                User newUser=new User(binding.nameEditText.getText().toString(),binding.BirthdayEditText.getText().toString(),binding.locationEditText.getText().toString(),binding.MyStoryEditText.getText().toString(),binding.pronounsEditText.getText().toString(),binding.WebsiteEditText.getText().toString(),sendUri);
