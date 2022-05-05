@@ -27,6 +27,7 @@ import org.parceler.Parcels;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 public class InterestsFragment extends Fragment {
     FragmentInterestsBinding binding;
@@ -55,12 +56,7 @@ public class InterestsFragment extends Fragment {
         requireActivity().getOnBackPressedDispatcher().addCallback(getActivity(), new OnBackPressedCallback(true) {
             @Override
             public void handleOnBackPressed() {
-
-                if (getActivity().getSupportFragmentManager().getBackStackEntryCount() > 0) {
-                    getActivity().getSupportFragmentManager().popBackStack();
-                } else {
-                    return;
-                }
+                requireActivity().getSupportFragmentManager().popBackStack();
             }
         });
         return binding.getRoot();

@@ -2,6 +2,7 @@ package com.example.earth.ui;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -33,6 +34,8 @@ profileAdapter adapter;
         binding = ActivityProfileBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        fragmentManager.popBackStack("ROOT", FragmentManager.POP_BACK_STACK_INCLUSIVE);
         adapter=new profileAdapter(getSupportFragmentManager(),getLifecycle());
         binding.createProfileViewPager.setAdapter(adapter);
 }}
