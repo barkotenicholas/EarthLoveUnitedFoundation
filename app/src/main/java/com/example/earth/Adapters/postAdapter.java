@@ -1,4 +1,4 @@
-package com.example.earth;
+package com.example.earth.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -8,6 +8,9 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.example.earth.R;
+import com.example.earth.post;
 
 import java.util.List;
 

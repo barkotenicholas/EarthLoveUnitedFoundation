@@ -6,6 +6,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 
+import com.example.earth.Adapters.postAdapter;
+import com.example.earth.Adapters.storiesAdapter;
+
 import java.util.ArrayList;
 import java.util.List;
 
