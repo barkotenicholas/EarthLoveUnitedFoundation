@@ -26,7 +26,7 @@
             android:id="@+id/bottom_navigation"
             app:itemIconTint="@color/selector"
             app:labelVisibilityMode="labeled"
-            app:itemTextColor="@color/earthGreen"
+            app:itemTextColor="@color/selector2"
             android:background="@color/earthLightestDark"
             app:menu="@menu/bottom_navigation"
             />
