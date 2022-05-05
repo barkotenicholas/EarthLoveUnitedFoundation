@@ -32,8 +32,7 @@ public class InterestsRecyclerviewAdapter extends RecyclerView.Adapter<Interests
     List<String> interestLabels;
     List<Integer> images;
     LayoutInflater inflater;
-    private SharedPreferences mSharedPreferences;
-    private SharedPreferences.Editor mEditor;
+
    public ArrayList<String> labels;
     public InterestsRecyclerviewAdapter(Context context, List<Integer> images, List<String> interestLabels) {
         this.images = images;
@@ -53,17 +52,7 @@ public class InterestsRecyclerviewAdapter extends RecyclerView.Adapter<Interests
     public void onBindViewHolder(@NonNull InterestsRecyclerviewAdapter.ViewHolder holder, int position) {
         holder.interestImage.setImageResource(images.get(position));
         holder.interestLabel.setText(interestLabels.get(position));
-//        holder.itemView.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Bundle bundle = new Bundle();
-//                labels.add(holder.interestLabel.getText().toString());
-//                mSharedPreferences = PreferenceManager.getDefaultSharedPreferences();
-//                private void addToSharedPreferences(String) {
-//                    mEditor.putString("interest", labels).apply();
-//                }
-//            }
-//        });
+
     }
 
     @Override
