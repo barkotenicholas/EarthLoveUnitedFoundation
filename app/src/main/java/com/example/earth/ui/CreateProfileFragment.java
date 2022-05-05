@@ -6,6 +6,7 @@ import android.app.Activity;
 import android.app.DownloadManager;
 import android.app.Instrumentation;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
 
@@ -18,13 +19,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.earth.R;
 import com.example.earth.databinding.FragmentCreateProfileBinding;
+import com.example.earth.models.profile;
 import com.github.dhaval2404.imagepicker.ImagePicker;
+import com.google.gson.Gson;
 
 import kotlin.Unit;
 
@@ -33,6 +37,9 @@ public class CreateProfileFragment extends Fragment {
 FragmentCreateProfileBinding binding;
     Uri sendUri;
 ActivityResult activityResult;
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
+Gson gson;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,12 +56,21 @@ ActivityResult activityResult;
         binding.buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String name=binding.nameEditText.getText().toString();
+                String birthday=binding.BirthdayEditText.getText().toString();
+                gson=new Gson();
+                mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+                mEditor=mSharedPreferences.edit();
+                profile newUser=new profile(binding.nameEditText.getText().toString(),binding.BirthdayEditText.getText().toString(),binding.locationEditText.getText().toString(),binding.MyStoryEditText.getText().toString(),binding.pronounsEditText.getText().toString(),binding.WebsiteEditText.getText().toString(),sendUri);
+                mEditor.putString("userDetails", gson.toJson(newUser)).commit();
+                System.out.println(newUser.getName());
                 FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
                 transaction.replace(R.id.createProfileFragment,new InterestsFragment());
                 transaction.addToBackStack("INTERESTS");
                 transaction.commit();
 
-//                User newUser=new User(binding.nameEditText.getText().toString(),binding.BirthdayEditText.getText().toString(),binding.locationEditText.getText().toString(),binding.MyStoryEditText.getText().toString(),binding.pronounsEditText.getText().toString(),binding.WebsiteEditText.getText().toString(),sendUri);
+
+
 //                Bundle bundle = new Bundle();
 ////                bundle.putString("Birthday",binding.BirthdayEditText.getText().toString());
 ////                bundle.putString("location",binding.locationEditText.getText().toString());
@@ -77,7 +93,7 @@ private ActivityResultLauncher startForProfileImageResult=registerForActivityRes
                     // There are no request codes
                     Intent data = result.getData();
                    Uri uri=data.getData();
-
+                    sendUri=uri;
                     binding.profilePhoto.setImageURI( uri);
                 }
             }

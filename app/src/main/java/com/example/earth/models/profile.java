@@ -1,27 +1,24 @@
 package com.example.earth.models;
 
+import android.net.Uri;
+
 import org.parceler.Parcel;
 
 import java.util.List;
-
-public class User {
+@Parcel
+public class profile {
     String Name;
     String Birthday;
     String Location;
     String Story;
     String Pronoun;
     String Website;
-    String imageUri;
-    List<String>interestLabels;
-    List<Integer>Images;
-    List<String>Clubs;
-    List<String>Contacts;
-    List<String>Followers;
-    List<String>Following;
-    public User() {
+    Uri imageUri;
+
+    public profile() {
 
     }
-    public User(String name, String birthday, String location, String story, String pronoun, String website, String imageUri) {
+    public profile(String name, String birthday, String location, String story, String pronoun, String website, Uri imageUri) {
         Name = name;
         Birthday = birthday;
         Location = location;
@@ -79,59 +76,13 @@ public class User {
         Website = website;
     }
 
-    public String getImageUri() {
+    public Uri getImageUri() {
         return imageUri;
     }
 
-    public void setImageUri(String imageUri) {
+    public void setImageUri(Uri imageUri) {
         this.imageUri = imageUri;
     }
 
-    public List<String> getInterestLabels() {
-        return interestLabels;
-    }
 
-    public void setInterestLabels(List<String> interestLabels) {
-        this.interestLabels = interestLabels;
-    }
-
-    public List<Integer> getImages() {
-        return Images;
-    }
-
-    public void setImages(List<Integer> images) {
-        Images = images;
-    }
-
-    public List<String> getClubs() {
-        return Clubs;
-    }
-
-    public void setClubs(List<String> clubs) {
-        Clubs = clubs;
-    }
-
-    public List<String> getContacts() {
-        return Contacts;
-    }
-
-    public void setContacts(List<String> contacts) {
-        Contacts = contacts;
-    }
-
-    public List<String> getFollowers() {
-        return Followers;
-    }
-
-    public void setFollowers(List<String> followers) {
-        Followers = followers;
-    }
-
-    public List<String> getFollowing() {
-        return Following;
-    }
-
-    public void setFollowing(List<String> following) {
-        Following = following;
-    }
 }

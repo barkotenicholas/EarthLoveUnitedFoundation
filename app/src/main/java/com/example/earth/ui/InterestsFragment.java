@@ -1,13 +1,11 @@
 package com.example.earth.ui;
 
-import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,14 +18,11 @@ import android.widget.Toast;
 import com.example.earth.R;
 import com.example.earth.adapter.InterestsRecyclerviewAdapter;
 import com.example.earth.databinding.FragmentInterestsBinding;
-import com.example.earth.models.User;
-
-import org.parceler.Parcels;
+import com.example.earth.models.profile;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 public class InterestsFragment extends Fragment {
     FragmentInterestsBinding binding;
@@ -35,7 +30,7 @@ public class InterestsFragment extends Fragment {
     List<String> interestLabels;
     List<Integer>images;
     RecyclerView dataList;
-    User newUser;
+    profile newProfile;
     InterestsRecyclerviewAdapter interestsRecyclerviewAdapter;
     public InterestsFragment() {
         // Required empty public constructor
