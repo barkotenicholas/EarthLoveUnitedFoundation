@@ -12,6 +12,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Earth">
         <activity
+            android:name=".ui.FollowActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.PostsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.DisplayProfileActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.MainActivity"
             android:exported="false" />
         <activity

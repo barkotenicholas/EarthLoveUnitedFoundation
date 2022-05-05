@@ -36,7 +36,7 @@
                 android:id="@+id/imageView13"
                 android:layout_width="370dp"
                 android:layout_height="244dp"
-
+android:layout_marginTop="10dp"
                 android:scaleType="centerCrop"
                 android:src="@drawable/girl"
                 app:layout_constraintStart_toStartOf="@+id/cardView2"
@@ -60,7 +60,7 @@
                 tools:layout_conversion_absoluteWidth="392dp">
 
                 <TextView
-                    android:id="@+id/textView8"
+                    android:id="@+id/followersTag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
@@ -69,10 +69,10 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView9" />
+                    app:layout_constraintTop_toTopOf="@+id/followingTag" />
 
                 <TextView
-                    android:id="@+id/textView9"
+                    android:id="@+id/followingTag"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
@@ -81,7 +81,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toStartOf="@+id/textView10"
-                    app:layout_constraintStart_toEndOf="@+id/textView8"
+                    app:layout_constraintStart_toEndOf="@+id/followersTag"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
@@ -94,7 +94,7 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView9" />
+                    app:layout_constraintTop_toTopOf="@+id/followingTag" />
 
                 <TextView
                     android:id="@+id/textView11"
@@ -106,7 +106,7 @@
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                    app:layout_constraintTop_toBottomOf="@+id/followingTag" />
 
                 <TextView
                     android:id="@+id/textView12"
@@ -118,10 +118,10 @@
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     app:layout_constraintStart_toEndOf="@+id/textView11"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                    app:layout_constraintTop_toBottomOf="@+id/followingTag" />
 
                 <ImageView
-                    android:id="@+id/imageView15"
+                    android:id="@+id/savedPostsIcon"
                     android:layout_width="65dp"
                     android:layout_height="25dp"
                     android:layout_marginStart="72dp"
@@ -130,7 +130,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
                     app:layout_constraintStart_toEndOf="@+id/textView12"
-                    app:layout_constraintTop_toBottomOf="@+id/textView9" />
+                    app:layout_constraintTop_toBottomOf="@+id/followingTag" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
