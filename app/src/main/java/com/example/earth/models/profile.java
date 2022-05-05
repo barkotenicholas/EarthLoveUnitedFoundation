@@ -3,7 +3,7 @@ package com.example.earth.models;
 import org.parceler.Parcel;
 
 import java.util.List;
-@Parcel
+
 public class User {
     String Name;
     String Birthday;
