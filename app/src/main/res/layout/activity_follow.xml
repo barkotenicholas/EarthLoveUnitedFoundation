@@ -1,13 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.viewpager2.widget.ViewPager2 xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/followViewPager"
-    android:background="@color/earthDark"
-    android:paddingStart="20dp"
-    android:paddingEnd="20dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.FollowActivity">
 
-</androidx.viewpager2.widget.ViewPager2>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/earthDark"
+        app:title="UserName"
+        app:titleTextColor="@color/white" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/followTab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/earthDark"
+        app:tabIconTint="@color/material_dynamic_secondary50"
+        app:tabIndicatorColor="@color/white"
+        app:tabSelectedTextColor="@color/white"
+        app:tabTextColor="@color/earthGreen" />
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/followViewPager"
+        android:layout_width="match_parent"
+        android:background="@color/earthDark"
+        android:paddingStart="20dp"
+        android:paddingEnd="20dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>

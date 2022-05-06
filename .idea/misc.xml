@@ -14,7 +14,7 @@
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1215" />
         <entry key="app/src/main/res/drawable/white_round_buttons.xml" value="0.1805" />
         <entry key="app/src/main/res/layout/activity_display_profile.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_follow.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_follow.xml" value="0.15" />
         <entry key="app/src/main/res/layout/activity_launch.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/activity_posts.xml" value="0.18" />
