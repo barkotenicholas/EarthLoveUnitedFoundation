@@ -3,6 +3,9 @@ package com.example.earth;
 import static androidx.fragment.app.FragmentManager.POP_BACK_STACK_INCLUSIVE;
 
 import androidx.annotation.NonNull;
+import android.os.Bundle;
+
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -20,13 +23,16 @@ import com.example.earth.Fragments.InboxFragment;
 import com.example.earth.Fragments.ProfileFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.example.earth.databinding.ActivityMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
     BottomNavigationView bottomNavigationView;
     Fragment selectedFragment = null;
 
+    ActivityMainBinding binding;
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         bottomNavigationView =findViewById(R.id.bottom_navigation);
@@ -110,3 +116,4 @@ public class MainActivity extends AppCompatActivity {
 
 
 }
+
