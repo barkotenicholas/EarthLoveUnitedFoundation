@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/border_bottom_follow.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/fields_round_corner.xml" value="0.1755" />
+        <entry key="app/src/main/res/drawable/follow_search_view.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/green_button.xml" value="0.1615" />
         <entry key="app/src/main/res/drawable/green_rounded_corner.xml" value="0.1805" />
         <entry key="app/src/main/res/drawable/grey_round_buttons.xml" value="0.1305" />
@@ -11,6 +13,7 @@
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1215" />
         <entry key="app/src/main/res/drawable/white_round_buttons.xml" value="0.1805" />
         <entry key="app/src/main/res/layout/activity_display_profile.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_follow.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_launch.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/activity_posts.xml" value="0.18" />
@@ -22,7 +25,8 @@
         <entry key="app/src/main/res/layout/fragment_create_profile.xml" value="0.16877637130801687" />
         <entry key="app/src/main/res/layout/fragment_display_profile.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_follow.xml" value="0.12546296296296297" />
-        <entry key="app/src/main/res/layout/fragment_followers.xml" value="0.1388888888888889" />
+        <entry key="app/src/main/res/layout/fragment_followers.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_following.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_interests.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.15" />
         <entry key="app/src/main/res/layout/fragment_photo_posts.xml" value="0.1527777777777778" />
