@@ -2,7 +2,10 @@ package com.example.earth.Fragments;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -30,9 +33,11 @@ public class HomeFragment extends Fragment {
     private postAdapter postAdapter;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
         View view =inflater.inflate(R.layout.fragment_home2, container, false);
+
+        ((AppCompatActivity) getActivity()).getSupportActionBar().hide();
+
 
         storiesBar =view.findViewById(R.id.storiesrecycler);
         postBar =view.findViewById(R.id.postsrecycler);
