@@ -21,30 +21,65 @@
         app:layout_constraintVertical_bias="0.0">
 
         <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/followerProfileImage"
             android:layout_width="70dp"
             android:layout_height="70dp"
-            android:src="@drawable/logo"
-            android:id="@+id/followerProfileImage"/>
+            android:src="@drawable/logo" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="25dp"
-            android:text="Mr House"
-            android:id="@+id/FollowerName"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:layout_gravity="center_vertical"
+            android:orientation="vertical"
+            android:paddingStart="20dp">
 
-        <androidx.appcompat.widget.AppCompatButton
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mr House"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:background="@drawable/follow_dot"
+            android:orientation="horizontal"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="10dp">
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Follow"
+                android:textColor="@color/earthLighterGreen" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginStart="120dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/remove_button"
-            android:text="Remove"
-            android:id="@+id/removeFollower"
-            android:textColor="@color/white" />
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="85dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/remove_button"
+                android:text="Remove"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
     </LinearLayout>
 
 

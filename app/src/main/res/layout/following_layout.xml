@@ -24,25 +24,37 @@
             android:src="@drawable/logo"
             android:id="@+id/followingProfileImage"/>
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="40dp"
-            android:layout_marginTop="25dp"
-            android:text="Mr House"
-            android:id="@+id/followingName"
-            android:textColor="@color/white"
-            android:textSize="20sp" />
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="20dp">
 
-        <androidx.appcompat.widget.AppCompatButton
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Mr House"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="30dp"
-            android:layout_marginStart="110dp"
-            android:layout_marginTop="25dp"
-            android:background="@drawable/remove_button"
-            android:text="Following"
-            android:id="@+id/followingButton"
-            android:textColor="@color/white" />
+            android:layout_gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="160dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/remove_button"
+                android:text="Following"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
