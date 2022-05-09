@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/border_bottom_follow.xml" value="0.136" />
+        <entry key="app/src/main/res/drawable/bottom_sheet_background.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/fields_round_corner.xml" value="0.1755" />
         <entry key="app/src/main/res/drawable/follow_dot.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/follow_search_view.xml" value="0.136" />
@@ -22,8 +23,8 @@
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.13" />
         <entry key="app/src/main/res/layout/club_item.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/follower_layout.xml" value="0.15168539325842698" />
-        <entry key="app/src/main/res/layout/following_layout.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/follower_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/following_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_clubs.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_comments_post.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_create_profile.xml" value="0.16877637130801687" />
@@ -33,11 +34,14 @@
         <entry key="app/src/main/res/layout/fragment_following.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_interests.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/fragment_options_dialog_list_dialog.xml" value="0.2" />
+        <entry key="app/src/main/res/layout/fragment_options_dialog_list_dialog_item.xml" value="0.13385416666666666" />
         <entry key="app/src/main/res/layout/fragment_photo_posts.xml" value="0.1527777777777778" />
         <entry key="app/src/main/res/layout/fragment_share_contacts.xml" value="0.1" />
         <entry key="app/src/main/res/layout/image_post_item.xml" value="0.1527777777777778" />
         <entry key="app/src/main/res/layout/interest_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/post_item.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/sort_bottom_sheet.xml" value="0.2379182156133829" />
       </map>
     </option>
   </component>
