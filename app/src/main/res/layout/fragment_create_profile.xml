@@ -230,6 +230,7 @@
                 android:layout_margin="5dp"
                 android:background="@drawable/green_button"
                 android:text="NEXT"
+                android:layout_gravity="center_horizontal"
                 android:textColor="@color/earthDark"
                 android:textStyle="bold" />
 

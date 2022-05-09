@@ -13,7 +13,7 @@ public class profile {
     String Story;
     String Pronoun;
     String Website;
-    Uri imageUri;
+    Uri ImageUri;
 
     public profile() {
 
@@ -25,7 +25,7 @@ public class profile {
         Story = story;
         Pronoun = pronoun;
         Website = website;
-        this.imageUri = imageUri;
+        ImageUri = imageUri;
     }
 
     public String getName() {
@@ -77,11 +77,11 @@ public class profile {
     }
 
     public Uri getImageUri() {
-        return imageUri;
+        return  ImageUri;
     }
 
     public void setImageUri(Uri imageUri) {
-        this.imageUri = imageUri;
+        ImageUri = imageUri;
     }
 
 

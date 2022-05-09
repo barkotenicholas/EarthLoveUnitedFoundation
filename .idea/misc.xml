@@ -10,13 +10,14 @@
         <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.1615" />
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1215" />
         <entry key="app/src/main/res/drawable/white_round_buttons.xml" value="0.1805" />
-        <entry key="app/src/main/res/layout/activity_display_profile.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_display_profile.xml" value="0.12" />
         <entry key="app/src/main/res/layout/activity_launch.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15625" />
-        <entry key="app/src/main/res/layout/activity_posts.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/activity_posts.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.13" />
         <entry key="app/src/main/res/layout/club_item.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/dark_list_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_clubs.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_comments_post.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_create_profile.xml" value="0.16877637130801687" />

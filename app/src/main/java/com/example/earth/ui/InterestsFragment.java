@@ -40,12 +40,6 @@ public class InterestsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentInterestsBinding.inflate(inflater, container, false);
-//        Bundle bundle = this.getArguments();
-//        newUser=bundle.getParcelable("newUser");
-//        Bundle bundle1=new Bundle();
-//        bundle1.putParcelable("newUser1", Parcels.wrap(newUser));
-//        ClubsFragment ClubsFragment=new ClubsFragment();
-//        ClubsFragment.setArguments(bundle1);
 
         Fragment profileFragment = getActivity().getSupportFragmentManager().findFragmentById(R.id.createProfileFragment);
         requireActivity().getOnBackPressedDispatcher().addCallback(getActivity(), new OnBackPressedCallback(true) {
@@ -76,7 +70,16 @@ public class InterestsFragment extends Fragment {
                 transaction.addToBackStack("CLUBS");
                 transaction.commit();
 
-                Toast.makeText(getContext(),getContext().toString(),Toast.LENGTH_LONG).show();
+            }
+        });
+        binding.next.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.interestFrameLayout,new ClubsFragment());
+                transaction.addToBackStack("CLUBS");
+                transaction.commit();
+
             }
         });
 

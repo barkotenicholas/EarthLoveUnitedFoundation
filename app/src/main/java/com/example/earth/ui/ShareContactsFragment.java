@@ -1,5 +1,6 @@
 package com.example.earth.ui;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.activity.OnBackPressedCallback;
@@ -40,9 +41,11 @@ FragmentShareContactsBinding binding;
         binding.notNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.shareContactsFrameLayout,new DisplayProfileFragment());
-                transaction.commit();
+                Intent intent = new Intent(getActivity(), DisplayProfileActivity.class);
+                getActivity().startActivity(intent);
+//                FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
+//                transaction.replace(R.id.shareContactsFrameLayout,new DisplayProfileFragment());
+//                transaction.commit();
 
             }
         });
