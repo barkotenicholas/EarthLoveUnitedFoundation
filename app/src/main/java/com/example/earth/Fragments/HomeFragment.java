@@ -19,7 +19,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.example.earth.adapters.postAdapter;
+import com.example.earth.Adapters.postAdapter;
 import com.example.earth.adapters.storiesAdapter;
 import com.example.earth.R;
 import com.example.earth.models.Posts;

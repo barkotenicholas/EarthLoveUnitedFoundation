@@ -12,6 +12,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.earth.HomeActivity;
 import com.example.earth.MainActivity;
 import com.example.earth.R;
 import com.example.earth.ui.signup.ResetPassword;
@@ -190,7 +191,7 @@ public class ActivityLogin extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            Intent intent = new Intent(ActivityLogin.this,MainActivity.class);
+            Intent intent = new Intent(ActivityLogin.this, HomeActivity.class);
             startActivity(intent);
         }
     }
