@@ -4,4 +4,27 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="textview">TextView</string>
     <string name="poem1">My aspens dear, whose airy cages quelled,\n</string>
+    <string name="connect">Connect</string>
+    <string name="home">Home</string>
+    <string name="inbox">Inbox</string>
+    <string name="profile">Profile</string>
+
+    <string name="elu_logo">ELU logo</string>
+    <string name="learn_about_the_climate_crises_connect_with_like_minded_people">Learn about the climate crises + connect with like-minded people.</string>
+    <string name="title_activity_otp_verification">OtpVerificationActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="we_re_glad_you_re_here">We\'re Glad You\'re here</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="signup"><u>SignUp</u></string>
+    <string name="terms_and_conditions"><u>Terms and conditions</u></string>
+    <string name="login"><u>Login</u></string>
+    <string name="phone_content">We will send you a text with a verification <code class=""></code>\n Message and data rates may apply</string>
 </resources>
