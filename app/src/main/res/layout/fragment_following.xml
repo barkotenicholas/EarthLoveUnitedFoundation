@@ -17,7 +17,9 @@
             android:id="@+id/followingSearchView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
             android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
             android:background="@drawable/follow_search_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -25,12 +27,14 @@
             app:queryHint="Search" />
 
 
-        <LinearLayout
+        <RelativeLayout
             android:id="@+id/linearLayout3"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
+            android:paddingStart="20dp"
             android:paddingTop="15dp"
+            android:paddingEnd="20dp"
             android:paddingBottom="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,8 +47,9 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_alignParentStart="true">
+
                 <TextView
                     android:id="@+id/textView9"
                     android:layout_width="wrap_content"
@@ -57,23 +62,24 @@
             <LinearLayout
                 android:layout_width="30dp"
                 android:layout_height="30dp"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="280dp"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_alignParentEnd="true">
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/sortButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/sortButton"
                     android:background="@drawable/swap_icon" />
             </LinearLayout>
 
-        </LinearLayout>
+        </RelativeLayout>
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/followingRecycler"
             android:layout_width="409dp"
             android:layout_height="530dp"
-            android:id="@+id/followingRecycler"
+            android:paddingStart="20dp"
+            android:paddingEnd="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />

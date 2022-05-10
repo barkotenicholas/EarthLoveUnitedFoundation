@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.97" />
         <entry key="app/src/main/res/drawable/border_bottom_follow.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/bottom_sheet_background.xml" value="0.136" />
         <entry key="app/src/main/res/drawable/fields_round_corner.xml" value="0.1755" />
@@ -16,7 +17,7 @@
         <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1215" />
         <entry key="app/src/main/res/drawable/white_round_buttons.xml" value="0.1805" />
         <entry key="app/src/main/res/layout/activity_display_profile.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_follow.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/activity_follow.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_launch.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15625" />
         <entry key="app/src/main/res/layout/activity_posts.xml" value="0.18" />
@@ -30,7 +31,7 @@
         <entry key="app/src/main/res/layout/fragment_create_profile.xml" value="0.16877637130801687" />
         <entry key="app/src/main/res/layout/fragment_display_profile.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_follow.xml" value="0.12546296296296297" />
-        <entry key="app/src/main/res/layout/fragment_followers.xml" value="0.24644549763033174" />
+        <entry key="app/src/main/res/layout/fragment_followers.xml" value="0.23076923076923078" />
         <entry key="app/src/main/res/layout/fragment_following.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_interests.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.15" />
