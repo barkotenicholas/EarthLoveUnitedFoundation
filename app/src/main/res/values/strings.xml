@@ -21,7 +21,6 @@
     <string name="sign_up">Sign Up</string>
     <string name="we_re_glad_you_re_here">We\'re Glad You\'re here</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="signup"><u>SignUp</u></string>
     <string name="terms_and_conditions"><u>Terms and conditions</u></string>
     <string name="login"><u>Login</u></string>

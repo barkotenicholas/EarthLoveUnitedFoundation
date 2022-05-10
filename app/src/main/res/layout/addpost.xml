@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/asas"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -92,15 +92,17 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="32dp"
         android:layout_marginEnd="16dp"
+        android:gravity="top|left"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/postid"
+            android:gravity="top|left"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/postid"
-             />
+            android:hint="What would you like to share?" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <androidx.cardview.widget.CardView
@@ -112,7 +114,16 @@
         app:cardCornerRadius="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:foregroundGravity="center"
         app:layout_constraintStart_toStartOf="parent" >
+
+
+        <TextView
+            android:id="@+id/AddImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Add to Post" />
 
     </androidx.cardview.widget.CardView>
 

@@ -12,7 +12,7 @@
         android:id="@+id/linearLayout4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="360dp"
+        android:layout_marginTop="250dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -100,9 +100,9 @@
     <TextView
         android:id="@+id/textView2"
         android:layout_width="320dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
 
-        android:layout_marginTop="38dp"
+        android:layout_marginTop="32dp"
         android:text="@string/learn_about_the_climate_crises_connect_with_like_minded_people"
         android:textAlignment="center"
         android:textColor="@color/white"
@@ -111,10 +111,9 @@
         app:layout_constraintBottom_toTopOf="@+id/linearLayout3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
 
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <TextView
         android:id="@+id/textView4"

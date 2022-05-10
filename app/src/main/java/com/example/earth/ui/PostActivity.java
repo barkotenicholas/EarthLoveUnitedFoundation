@@ -21,9 +21,7 @@ public class PostActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
 
-        binding.one.setOnClickListener(view -> {
-            FirebaseAuth.getInstance().signOut();
 
-        });
+
     }
 }

@@ -1,24 +1,30 @@
-package com.example.earth.Adapters;
+package com.example.earth.adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.earth.R;
+import com.example.earth.models.Posts;
 import com.example.earth.models.post;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 public class postAdapter extends RecyclerView.Adapter<postAdapter.postsViewHolder> {
-    private List<post> posts;
+    private List<Posts> posts;
     private Context context;
 
-    public postAdapter(List<post> posts, Context context) {
+    public postAdapter(List<Posts> posts, Context context) {
         this.posts = posts;
         this.context = context;
     }
@@ -27,21 +33,21 @@ public class postAdapter extends RecyclerView.Adapter<postAdapter.postsViewHolde
     @Override
     public postAdapter.postsViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         LayoutInflater inflater = LayoutInflater.from(parent.getContext());
-        View view =inflater.inflate(R.layout.post_page, parent, false);
+        View view = inflater.inflate(R.layout.post_page, parent, false);
         postAdapter.postsViewHolder viewHolder = new postAdapter.postsViewHolder(view);
         return viewHolder;
     }
 
     @Override
     public void onBindViewHolder(@NonNull postsViewHolder holder, int position) {
-        if(posts.get(position).isScrolled()) {
-            try {
-                holder.postOutline.setCardBackgroundColor(context.getResources().getColor(R.color.earthGreen));
-            }catch (NullPointerException ex){
-                ex.printStackTrace();
-            }
+        Posts c = posts.get(position);
+        holder.desc.setText(c.getDescription());
+        String currentUrl = c.getUrl();
+        Picasso.get()
+                .load(c.getUrl())
+                .into(holder.o);
 
-        }
+
     }
 
 
@@ -51,16 +57,19 @@ public class postAdapter extends RecyclerView.Adapter<postAdapter.postsViewHolde
     }
 
 
-
     //lets create the view holder class
 
-    public static class postsViewHolder extends RecyclerView.ViewHolder{
+    public static class postsViewHolder extends RecyclerView.ViewHolder {
         private CardView postOutline;
-        public postsViewHolder(@NonNull View itemView){
+        private TextView desc;
+        private ImageView o;
+
+        public postsViewHolder(@NonNull View itemView) {
             super(itemView);
 
             itemView.findViewById(R.id.postOutline);
-
+            desc = itemView.findViewById(R.id.description);
+            o = itemView.findViewById(R.id.iv_overlay);
         }
 
     }
