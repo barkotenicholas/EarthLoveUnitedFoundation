@@ -36,6 +36,7 @@
         app:tabIndicatorColor="@color/earthLighterGreen"
         android:theme="@style/MyMaterialTheme"
         app:tabSelectedTextColor="@color/earthGreen"
+        app:tabIndicatorAnimationMode="elastic"
         app:tabTextColor="@color/earthLightestDark"
         app:tabMode="fixed"/>
 

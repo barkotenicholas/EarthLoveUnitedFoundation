@@ -40,6 +40,12 @@ public class FollowActivity extends AppCompatActivity {
             new TabLayoutMediator(followLayout, viewPager, (tab, position) -> tab.setText(tabHeads.get(position))).attach();
 
 
+            followBinding.followBackButton.setOnClickListener(view1 -> {
+               /*To Do
+               *
+               * Go Back to previous Activity
+               * */
+            });
 
 
             /* To Do
