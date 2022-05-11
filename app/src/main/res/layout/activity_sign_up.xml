@@ -103,10 +103,12 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                style="@style/LoginTextInputLayoutStyle"
                 app:boxBackgroundMode="none">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/nameEditText"
+                    android:inputType="textPersonName"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/sign_up_fields"
@@ -146,12 +148,14 @@
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                style="@style/LoginTextInputLayoutStyle"
                 app:boxBackgroundMode="none">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/emailEditText"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:inputType="textEmailAddress"
                     android:background="@drawable/sign_up_fields"
                     android:textColor="@color/white" />
             </com.google.android.material.textfield.TextInputLayout>
@@ -180,7 +184,7 @@
         <RelativeLayout
             android:id="@+id/relativeLayout2"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="65dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/phoneLinearLayout">
@@ -189,8 +193,8 @@
             <com.hbb20.CountryCodePicker
                 android:id="@+id/countryCodeHolder"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="11dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="12dp"
                 android:background="@drawable/country_code_edit"
                 app:ccpDialog_textColor="@color/earthDark"
                 app:ccp_autoDetectCountry="true"
@@ -200,7 +204,7 @@
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_toEndOf="@id/countryCodeHolder"
                 app:boxBackgroundMode="none">
 

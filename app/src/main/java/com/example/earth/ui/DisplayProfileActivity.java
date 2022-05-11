@@ -48,7 +48,6 @@ ActivityDisplayProfileBinding binding;
         mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
         String userDetails=mSharedPreferences.getString("userDetails","");
         userProfile=gson.fromJson(userDetails,profile.class);
-Log.d("userName",userProfile.getName());
         System.out.println(userProfile.getName());
       binding.newName.setText(userProfile.getName());
       binding.profileAge.setText(userProfile.getBirthday());

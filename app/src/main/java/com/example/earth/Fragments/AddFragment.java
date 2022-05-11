@@ -39,6 +39,7 @@ import com.google.firebase.storage.UploadTask;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class AddFragment extends Fragment {
@@ -158,13 +159,29 @@ public class AddFragment extends Fragment {
                 taskSnapshot.getStorage().getDownloadUrl().addOnSuccessListener(uri -> {
                     String url= uri.toString();
                     final UploadPost uploadPost = new UploadPost(id, description,email,url);
-                    mDatabase.child("Posts").child(id).setValue(uploadPost).addOnSuccessListener(new OnSuccessListener<Void>() {
+
+                    DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Posts");
+                    String postId = ref.push().getKey();
+
+                    HashMap<String , Object> map = new HashMap<>();
+                    map.put("postid" , postId);
+                    map.put("imageurl" , url);
+                    map.put("description" , description);
+                    map.put("publisher" , FirebaseAuth.getInstance().getCurrentUser().getUid());
+
+                    ref.child(postId).setValue(map).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
-                        public void onSuccess(Void aVoid) {
+                        public void onSuccess(Void unused) {
                             progressDialog.dismiss();
                             Toast.makeText(getActivity(), "Post Added ", Toast.LENGTH_SHORT).show();
                         }
                     });
+                  /*  mDatabase.child("Posts").child(id).setValue(uploadPost).addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+
+                        }
+                    });*/
                 });
 
 

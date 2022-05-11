@@ -58,7 +58,7 @@ public class ActivityLogin extends AppCompatActivity {
 
         createRequest();
 
-        binding.layLogin.imageView.setOnClickListener(view -> signIn());
+        binding.layLogin.googlesignin.setOnClickListener(view -> signIn());
 
         binding.layLogin.forgotpass.setOnClickListener(view -> startActivity(new Intent(ActivityLogin.this, ResetPassword.class)));
 

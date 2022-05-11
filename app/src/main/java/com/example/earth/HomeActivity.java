@@ -47,8 +47,7 @@ public class HomeActivity extends AppCompatActivity {
                     viewFragment( new ConnectFragment(),"OO");
                     break;
                 case R.id.nav_add:
-                    selectedFragment = null;
-                    showBottomSheetDialog();
+                    showBottomSheetDialog(new AddFragment(),"OO");
                     break;
 
                 case R.id.nav_inbox:
@@ -65,18 +64,38 @@ public class HomeActivity extends AppCompatActivity {
         }
     };
 
-    private void showBottomSheetDialog() {
+    private void showBottomSheetDialog(Fragment fragment,String name) {
+
+        final FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+        fragmentTransaction.replace(R.id.fragment_container, fragment);
+        fragmentTransaction.setCustomAnimations(R.anim.slide_in_bottom, R.anim.slide_out_top, R.anim.slide_in_top, R.anim.slide_out_bottom);
+
+        // 1. Know how many fragments there are in the stack
+        final int count = fragmentManager.getBackStackEntryCount();
+        // 2. If the fragment is **not** "home type", save it to the stack
+        if( name.equals( "OO") ) {
+            fragmentTransaction.addToBackStack(name);
+        }
+        // Commit !
+        fragmentTransaction.commit();
+        // 3. After the commit, if the fragment is not an "home type" the back stack is changed, triggering the
+        // OnBackStackChanged callback
+        fragmentManager.addOnBackStackChangedListener(new FragmentManager.OnBackStackChangedListener() {
+            @Override
+            public void onBackStackChanged() {
+                // If the stack decreases it means I clicked the back button
+                if( fragmentManager.getBackStackEntryCount() <= count){
+                    // pop all the fragment and remove the listener
+                    fragmentManager.popBackStack("OO", POP_BACK_STACK_INCLUSIVE);
+                    fragmentManager.removeOnBackStackChangedListener(this);
+                    // set the home button selected
+                    bottomNavigationView.getMenu().getItem(0).setChecked(true);
+                }
+            }
+        });
 
 
-        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
-
-        ft.setCustomAnimations(R.anim.slide_in_bottom, R.anim.slide_out_top, R.anim.slide_in_top, R.anim.slide_out_bottom);
-
-// Replace the contents of the container with the new fragment
-        ft.add(R.id.fragment_container, new AddFragment());
-// or ft.add(R.id.your_placeholder, new FooFragment());
-// Complete the changes added above
-        ft.commit();
     }
 
 

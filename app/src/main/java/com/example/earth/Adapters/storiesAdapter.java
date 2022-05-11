@@ -1,4 +1,4 @@
-package com.example.earth.adapters;
+package com.example.earth.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
