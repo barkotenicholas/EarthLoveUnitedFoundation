@@ -1,9 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context=".ui.FollowActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/followToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/earthDark">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/followBackButton"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:background="@drawable/white_back_icon" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="UserName"
+            android:textColor="@color/earthGreen"
+            android:textSize="24sp" />
+    </androidx.appcompat.widget.Toolbar>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/followTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/earthDark"
+        android:contentDescription="@string/swipe_followers_following"
+        app:tabIndicatorColor="@color/earthLighterGreen"
+        android:theme="@style/MyMaterialTheme"
+        app:tabSelectedTextColor="@color/earthGreen"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabTextColor="@color/earthLightestDark"
+        app:tabMode="fixed"/>
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/followViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/earthDark"/>
+
+</LinearLayout>

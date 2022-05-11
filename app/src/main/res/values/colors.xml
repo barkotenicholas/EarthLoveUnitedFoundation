@@ -17,6 +17,7 @@
     <color name="earthDark"> #121212</color>
     <color name="earthLighterDark">#262626</color>
     <color name="earthLightestDark">#4F4F4F</color>
+    <color name="Transparent">#80000000</color>
     <color name="gray">#4A808080</color>
     <color name="back">#262626</color>
     <color name="mtrl_textinput_default_box_stroke_color" tools:override="true">#fff</color>

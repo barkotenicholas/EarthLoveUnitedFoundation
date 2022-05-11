@@ -14,7 +14,14 @@
         android:theme="@style/Theme.Earth.NoActionBar">
         <activity
             android:name=".ui.FollowActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:theme="@style/Theme.MaterialComponents.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.PostsActivity"
             android:exported="false" />
@@ -26,7 +33,9 @@
             android:exported="false" />
         <activity
             android:name=".ui.ProfileActivity"
-            android:exported="true"/>
+            android:exported="false"/>
+      
+
         <activity
             android:name=".PostActivity"
             android:exported="false" />
