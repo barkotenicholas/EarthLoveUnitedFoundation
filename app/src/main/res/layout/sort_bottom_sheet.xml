@@ -72,7 +72,7 @@
             android:layout_gravity="start"
             android:background="?android:selectableItemBackground"
             android:button="@null"
-            android:buttonTint="@color/white"
+            android:buttonTint="@color/purple_700"
             android:drawableStart="?android:attr/listChoiceIndicatorSingle"
             android:layoutDirection="rtl"
             android:paddingStart="10dp"

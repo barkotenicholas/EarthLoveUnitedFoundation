@@ -24,7 +24,7 @@
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.13" />
         <entry key="app/src/main/res/layout/club_item.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/follower_layout.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/follower_layout.xml" value="0.33" />
         <entry key="app/src/main/res/layout/following_layout.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_clubs.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_comments_post.xml" value="0.1" />
