@@ -1,6 +1,5 @@
 package com.example.earth.adapter;
 
-import static com.example.earth.constants.constants.NUM_TABS;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;

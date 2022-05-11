@@ -17,6 +17,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.example.earth.R;
+import com.example.earth.adapter.checkAdapter;
 import com.example.earth.adapter.clubsAdapter;
 import com.example.earth.adapter.postAdapter;
 import com.example.earth.databinding.FragmentClubsBinding;
@@ -31,7 +32,7 @@ FragmentCommentsPostBinding binding;
     RecyclerView dataList;
     com.example.earth.adapter.postAdapter postAdapter;
     List<String> posts;
-
+checkAdapter checkAdapter;
     public CommentsPostFragment() {
         // Required empty public constructor
     }
@@ -58,6 +59,7 @@ FragmentCommentsPostBinding binding;
         dataList= binding.commentsRecycler;
         dataList.setLayoutManager(new LinearLayoutManager(getActivity()));
         dataList.setAdapter( postAdapter);
+
 
     }
 }

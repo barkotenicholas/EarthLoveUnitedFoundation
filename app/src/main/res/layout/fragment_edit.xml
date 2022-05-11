@@ -3,13 +3,362 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/followingFragment"
-    tools:context=".ui.FollowingFragment">
-
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/editFrameLayout"
+    tools:context=".ui.EditFragment">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/editConstraint"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/earthDark"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:layout_marginBottom="128dp"
+                android:orientation="vertical"
+                android:paddingHorizontal="30dp"
+                android:paddingBottom="30dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                    android:id="@+id/createH1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Let's create your profile!"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+                    android:textColor="@color/earthGreen"
+                    android:textSize="36sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/profilePhoto"
+                        android:layout_width="match_parent"
+                        android:layout_height="300dp"
+
+
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/girl"
+                        app:shapeAppearanceOverlay="@style/roundedImage" />
+
+                    <ImageView
+                        android:id="@+id/addButton"
+                        android:layout_width="60dp"
+                        android:layout_marginStart="-60dp"
+
+                        android:layout_marginTop="5dp"
+                        android:layout_height="60dp"
+                        app:srcCompat="@drawable/ic_baseline_add_circle_24" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/nameLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Name"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/earthGreen"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/nameEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="10dp"
+                    android:hint="Name"
+                    android:background="@drawable/fields_round_corner"
+                    android:minHeight="48dp"
+                    android:nextFocusDown="@+id/passwordEditText"
+
+                    android:textColor="@color/white"
+                    android:textColorHint="#52FFFFFF"
+                    android:textSize="20sp" />
+
+
+                <TextView
+                    android:id="@+id/BirthdayLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Birthday(MM/DD/YYYYY)"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/earthGreen"
+                    android:textSize="20sp"
+                    android:layout_margin="5dp"
+
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/BirthdayEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="10dp"
+                    android:hint="04/23/1997"
+                    android:background="@drawable/fields_round_corner"
+                    android:minHeight="48dp"
+                    android:nextFocusDown="@+id/passwordEditText"
+
+                    android:textColor="@color/white"
+                    android:textColorHint="#52FFFFFF"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/locationLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Location"
+                    android:layout_margin="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/earthGreen"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/locationEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="10dp"
+                    android:hint="San Francisco"
+                    android:background="@drawable/fields_round_corner"
+                    android:minHeight="48dp"
+                    android:nextFocusDown="@+id/passwordEditText"
+
+                    android:textColor="@color/white"
+                    android:textColorHint="#52FFFFFF"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/pronounsLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Pronouns"
+                    android:layout_margin="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/earthGreen"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/pronounsEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:hint="She/Her"
+                    android:background="@drawable/fields_round_corner"
+                    android:minHeight="48dp"
+                    android:nextFocusDown="@+id/passwordEditText"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#52FFFFFF"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/websiteLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Website"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/earthGreen"
+                    android:textSize="20sp"
+                    android:layout_margin="5dp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/WebsiteEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+
+                    android:hint="juliahill.com"
+                    android:background="@drawable/fields_round_corner"
+                    android:minHeight="48dp"
+                    android:nextFocusDown="@+id/passwordEditText"
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#52FFFFFF"
+                    android:textSize="20sp" />
+                <TextView
+                    android:id="@+id/MyStoryLabel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="My Story"
+                    android:layout_margin="5dp"
+                    android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+                    android:textColor="@color/earthGreen"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <EditText
+                    android:id="@+id/MyStoryEditText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:inputType="textMultiLine"
+
+                    android:gravity="start"
+                    android:background="@drawable/fields_round_corner"
+                    android:minHeight="250dp"
+
+                    android:padding="10dp"
+                    android:textColor="@color/white"
+                    android:textColorHint="#52FFFFFF"
+                    android:textSize="20sp" />
+
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView
+                        android:id="@+id/textInterest"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="Interests"
+                        android:textColor="@color/earthGreen"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/textInterestEdit"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:layout_margin="5dp"
+                        android:text="Edit"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+
+                        app:layout_constraintBottom_toBottomOf="@+id/textInterest"
+                        app:layout_constraintTop_toTopOf="@+id/textInterest"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:layout_editor_absoluteX="88dp"
+                        tools:layout_editor_absoluteY="-44dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/cardView9"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:background="@drawable/grey_round_buttons"
+
+                    app:layout_constraintEnd_toEndOf="@+id/cardView8"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/cardView8"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView8">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/interestsRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="61dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginTop="10dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    >
+                    <TextView
+                        android:id="@+id/groupsLabel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="Groups"
+                        android:textColor="@color/earthGreen"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/editGroups"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="Edit"
+                        android:textColor="@color/white"
+                        android:textSize="20sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/groupsLabel"
+                        app:layout_constraintTop_toTopOf="@+id/groupsLabel"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        tools:layout_editor_absoluteX="5dp"
+                        tools:layout_editor_absoluteY="5dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/groupsCard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+android:layout_marginBottom="10dp"
+                    android:background="@drawable/grey_round_buttons"
+
+                    app:layout_constraintEnd_toEndOf="@+id/cardView8"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/cardView8"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView8">
+
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/groupsRecycler"
+                        android:layout_width="match_parent"
+                        android:layout_height="61dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_marginEnd="5dp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/buttonNext"
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@drawable/green_button"
+                    android:text="SAVE"
+                    android:layout_gravity="center_horizontal"
+                    android:textColor="@color/earthDark"
+                    android:textStyle="bold" />
+
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

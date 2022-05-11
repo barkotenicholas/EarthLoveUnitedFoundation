@@ -10,14 +10,11 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.earth.R;
 import com.example.earth.adapter.blackListAdapter;
-import com.example.earth.adapter.clubsAdapter;
 import com.example.earth.adapter.photoPostAdapter;
 import com.example.earth.databinding.ActivityDisplayProfileBinding;
-import com.example.earth.databinding.ActivityMainBinding;
 import com.example.earth.models.profile;
 import com.google.gson.Gson;
 
@@ -55,6 +52,13 @@ Log.d("userName",userProfile.getName());
       binding.userStory.setText(userProfile.getStory());
       binding.userImage.setImageURI(userProfile.getImageUri());
 
+      binding.editIcon.setOnClickListener(new View.OnClickListener() {
+          @Override
+          public void onClick(View view) {
+              Intent intent = new Intent(DisplayProfileActivity.this, editActivity.class);
+              startActivity(intent);
+          }
+      });
       interestsRecycler=binding.interestsRecycler;
         clubsRecycler=binding.groupsRecycler;
         postsRecycler=binding.photosRecycler;
@@ -77,16 +81,16 @@ binding.followersLayout3.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View view) {
         AppCompatActivity activity=(AppCompatActivity)view.getContext();
-       FollowersFragment FollowersFragment=new FollowersFragment();
-        activity.getSupportFragmentManager().beginTransaction().replace(R.id.scrollView2,FollowersFragment).addToBackStack(null).commit();
+       EditFragment EditFragment =new EditFragment();
+        activity.getSupportFragmentManager().beginTransaction().replace(R.id.scrollView2, EditFragment).addToBackStack(null).commit();
     }
 });
         binding.followingLayout4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 AppCompatActivity activity=(AppCompatActivity)view.getContext();
-                FollowingFragment FollowingFragment=new FollowingFragment();
-                activity.getSupportFragmentManager().beginTransaction().replace(R.id.scrollView2,FollowingFragment).addToBackStack(null).commit();
+                editClubsFragment editClubsFragment =new editClubsFragment();
+                activity.getSupportFragmentManager().beginTransaction().replace(R.id.scrollView2, editClubsFragment).addToBackStack(null).commit();
             }
         });
         binding.savedLayout2.setOnClickListener(new View.OnClickListener() {

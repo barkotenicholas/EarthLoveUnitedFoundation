@@ -12,7 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Earth">
         <activity
-            android:name=".ui.FollowActivity"
+            android:name=".ui.editActivity"
             android:exported="false" />
         <activity
             android:name=".ui.PostsActivity"

@@ -1,66 +1,124 @@
 package com.example.earth.ui;
 
+import android.app.Activity;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
+import androidx.activity.result.ActivityResult;
+import androidx.activity.result.ActivityResultCallback;
+import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.earth.R;
+import com.example.earth.adapter.blackListAdapter;
+import com.example.earth.databinding.FragmentEditBinding;
+import com.example.earth.models.profile;
+import com.github.dhaval2404.imagepicker.ImagePicker;
+import com.google.gson.Gson;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link FollowersFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class FollowersFragment extends Fragment {
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+import kotlin.Unit;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public FollowersFragment() {
+public class EditFragment extends Fragment {
+FragmentEditBinding binding;
+    RecyclerView interestsRecycler;
+    RecyclerView clubsRecycler;
+    List<String> interestsLists;
+    List<String> clubsLists;
+    blackListAdapter interestsAdapter;
+    blackListAdapter clubsAdapter;
+    Uri sendUri;
+    Gson gson;
+    profile userProfile;
+    private SharedPreferences mSharedPreferences;
+    public EditFragment() {
         // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment FollowersFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static FollowersFragment newInstance(String param1, String param2) {
-        FollowersFragment fragment = new FollowersFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_followers, container, false);
+        binding=FragmentEditBinding.inflate(getLayoutInflater());
+        gson=new Gson();
+        mSharedPreferences = PreferenceManager.getDefaultSharedPreferences(getContext());
+        String userDetails=mSharedPreferences.getString("userDetails","");
+        userProfile=gson.fromJson(userDetails,profile.class);
+        Log.d("userName",userProfile.getName());
+        System.out.println(userProfile.getName());
+        binding.BirthdayEditText.setText(userProfile.getBirthday());
+        binding.locationEditText.setText(userProfile.getLocation());
+        binding.MyStoryEditText.setText(userProfile.getStory());
+        binding.nameEditText.setText(userProfile.getName());
+        binding.pronounsEditText.setText(userProfile.getPronoun());
+        binding.WebsiteEditText.setText(userProfile.getWebsite());
+        interestsRecycler=binding.interestsRecycler;
+        clubsRecycler=binding.groupsRecycler;
+
+        clubsLists=new ArrayList<String>(Arrays.asList("Environment","Severe Weather","Deforestation","Polar Landscape","Water Levels","Forest Fire","Deforestation"));
+        clubsAdapter=new blackListAdapter(getContext(),clubsLists);
+        clubsRecycler.setAdapter( clubsAdapter);
+        clubsRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+
+        interestsLists=new ArrayList<String>(Arrays.asList("Severe Weather","Deforestation","Environment","Polar Landscape","Forest Fire","Deforestation","Water Levels"));
+        interestsAdapter=new blackListAdapter(getContext(),interestsLists);
+        interestsRecycler.setAdapter( interestsAdapter);
+        interestsRecycler.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+binding.editGroups.setOnClickListener(new View.OnClickListener() {
+    @Override
+    public void onClick(View view) {
+
+
+        FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
+        transaction.replace(R.id.editFrameLayout,new EditInterestFragment());
+        transaction.addToBackStack("editINTERESTS");
+        transaction.commit();
     }
-}
+});
+        binding.textInterestEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
+                transaction.replace(R.id.editFrameLayout,new editClubsFragment());
+                transaction.addToBackStack("editClubs");
+                transaction.commit();
+            }
+        });
+
+        binding.addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ImagePicker.with(getActivity()).compress(1024).maxResultSize(1080,1080).createIntent(intent->{startForProfileImageResult.launch(intent);
+                    return Unit.INSTANCE;});
+            }
+        });
+        return binding.getRoot();}
+        private ActivityResultLauncher startForProfileImageResult=registerForActivityResult(new ActivityResultContracts.StartActivityForResult(),
+                new ActivityResultCallback<ActivityResult>() {
+                    @Override
+                    public void onActivityResult(ActivityResult result) {
+                        if (result.getResultCode() == Activity.RESULT_OK) {
+                            // There are no request codes
+                            Intent data = result.getData();
+                            Uri uri=data.getData();
+                            sendUri=uri;
+                            binding.profilePhoto.setImageURI( uri);
+                        }
+                    }
+                });
+    }
