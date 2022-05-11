@@ -3,6 +3,7 @@ package com.example.earth.adapter;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.earth.R;
@@ -52,8 +54,15 @@ public class InterestsRecyclerviewAdapter extends RecyclerView.Adapter<Interests
     public void onBindViewHolder(@NonNull InterestsRecyclerviewAdapter.ViewHolder holder, int position) {
         holder.interestImage.setImageResource(images.get(position));
         holder.interestLabel.setText(interestLabels.get(position));
-
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder.interestCard.setBackgroundResource(R.drawable.green_rounded_corner);
+            }
+        });
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -63,11 +72,12 @@ public class InterestsRecyclerviewAdapter extends RecyclerView.Adapter<Interests
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView interestLabel;
         ImageView interestImage;
-
+CardView interestCard;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             interestLabel = itemView.findViewById(R.id.imageLabel);
             interestImage = itemView.findViewById(R.id.interestLabel);
+            interestCard=itemView.findViewById(R.id.interestCard);
         }
 
 

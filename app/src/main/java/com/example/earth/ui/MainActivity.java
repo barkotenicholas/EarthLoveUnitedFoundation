@@ -19,6 +19,6 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         adapter=new mainAdapter(getSupportFragmentManager(),getLifecycle());
-        binding.mainViewPager.setAdapter(adapter);
+     //   binding.mainViewPager.setAdapter(adapter);
   }
 }

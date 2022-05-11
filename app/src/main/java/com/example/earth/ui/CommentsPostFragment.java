@@ -44,7 +44,16 @@ FragmentCommentsPostBinding binding;
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        posts=new ArrayList<String>(Arrays.asList("#Environment","#Severe Weather","#Deforestation","#Polar Landscape","#Water Levels","#Forest Fire","#Deforestation","#Polar Landscape"));
+        posts=new ArrayList<String>(Arrays.asList(getString(R.string.poem1) +
+                "Quelled or quenched in leaves the leaping sun,\n" +
+                "All felled, felled, are all felled;\n" +
+                "Of a fresh and following folded rank\n" +
+                "Not spared, not one\n" +
+                "That dandled a sandalled\n" +
+                "Shadow that swam or sank\n" +
+                "On meadow and river and wind-wandering weed-winding bank …","The child no longer remembers her eyes.  Not even grandmother’s or grandfather’s,  or big sister’s ","#Deforestation","Till it bore an apple bright.\n" +
+                "And my foe beheld it shine.\n" +
+                "And he knew that it was mine","#Water Levels","#Forest Fire","And I watered it in fears.Night and morning with my tears","#Polar Landscape"));
         postAdapter=new postAdapter(getContext(), posts);
         dataList= binding.commentsRecycler;
         dataList.setLayoutManager(new LinearLayoutManager(getActivity()));

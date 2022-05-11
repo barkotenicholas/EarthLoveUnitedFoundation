@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "604319676116",
+    "project_id": "earthlove-8e444",
+    "storage_bucket": "earthlove-8e444.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:604319676116:android:f66b7c53b4d140cd5a2d41",
+        "android_client_info": {
+          "package_name": "com.example.earth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "604319676116-e8qtb8q6egahgm128u2c1tkgvf2i2tfn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBR-lOYpW3zlAozZtZcQvZUMhw2bdEJULk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "604319676116-e8qtb8q6egahgm128u2c1tkgvf2i2tfn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

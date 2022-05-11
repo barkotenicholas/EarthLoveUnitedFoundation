@@ -2,6 +2,7 @@ package com.example.earth.adapter;
 
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.earth.R;
@@ -34,6 +36,13 @@ public class clubsAdapter extends RecyclerView.Adapter<clubsAdapter.ViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.clubLabel.setText(clubLabels.get(position));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                holder.clubCard.setBackgroundResource(R.drawable.green_rounded_corner);
+                holder.clubLabel.setTextColor(Color.parseColor("#7AF2AA"));
+            }
+        });
     }
 
     @Override
@@ -43,10 +52,11 @@ public class clubsAdapter extends RecyclerView.Adapter<clubsAdapter.ViewHolder>{
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         TextView clubLabel;
-
+        CardView clubCard;
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             clubLabel = itemView.findViewById(R.id.clubLabel);
+            clubCard=itemView.findViewById(R.id.clubCard);
         }
 
 

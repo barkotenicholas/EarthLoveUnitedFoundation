@@ -8,6 +8,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardCornerRadius="10dp"
+        android:id="@+id/clubCard"
       android:layout_margin="10dp"
         app:cardBackgroundColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"

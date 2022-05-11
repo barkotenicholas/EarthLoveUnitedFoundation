@@ -4,8 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:id="@+id/postsActivity"
     android:background="@color/earthDark"
     tools:context=".ui.PostsActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/earthDark"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:title="All Saved Posts"
+        android:textAlignment="center"
+        app:titleTextColor="@color/earthGreen" />
+
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/postsTabLayout"
@@ -13,37 +27,19 @@
         android:layout_height="wrap_content"
         android:background="@color/earthDark"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        app:tabIconTint="@color/earthLighterGreen"
+        app:tabIndicatorColor="@color/earthGreen"
 
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/imageTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Images"
-
-            app:tabTextColor="@color/earthGreen" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/videosTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Videos"
-            app:tabTextColor="@color/earthGreen" />
-
-        <com.google.android.material.tabs.TabItem
-            android:id="@+id/postsTab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Posts"
-            app:tabTextColor="@color/earthGreen" />
-    </com.google.android.material.tabs.TabLayout>
+        app:tabSelectedTextColor="@color/earthGreen"
+        app:tabTextColor="@color/earthLighterGreen" />
 
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/tabViewPager"
-        android:layout_width="391dp"
-        android:layout_height="735dp"
-        android:layout_marginTop="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
