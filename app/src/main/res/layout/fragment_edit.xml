@@ -37,7 +37,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="Let's create your profile!"
+                    android:text="Edit My Profile"
                     android:textAlignment="center"
                     android:textAppearance="@style/TextAppearance.AppCompat.Display1"
                     android:textColor="@color/earthGreen"
@@ -68,6 +68,7 @@
                         android:layout_height="60dp"
                         app:srcCompat="@drawable/ic_baseline_add_circle_24" />
                 </LinearLayout>
+
                 <TextView
                     android:id="@+id/nameLabel"
                     android:layout_width="match_parent"
@@ -76,23 +77,22 @@
                     android:text="Name"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/earthGreen"
-                    android:textSize="20sp"
+                    android:textSize="11sp"
                     android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/nameEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:padding="10dp"
-                    android:hint="Name"
+                    android:layout_marginStart="5dp"
                     android:background="@drawable/fields_round_corner"
-                    android:minHeight="48dp"
+                    android:hint="Name"
                     android:nextFocusDown="@+id/passwordEditText"
 
+                    android:padding="10dp"
                     android:textColor="@color/white"
                     android:textColorHint="#52FFFFFF"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
 
                 <TextView
@@ -102,7 +102,7 @@
                     android:text="Birthday(MM/DD/YYYYY)"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/earthGreen"
-                    android:textSize="20sp"
+                    android:textSize="11sp"
                     android:layout_margin="5dp"
 
                     android:textStyle="bold" />
@@ -111,16 +111,14 @@
                     android:id="@+id/BirthdayEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_marginStart="5dp"
                     android:padding="10dp"
                     android:hint="04/23/1997"
                     android:background="@drawable/fields_round_corner"
-                    android:minHeight="48dp"
                     android:nextFocusDown="@+id/passwordEditText"
-
                     android:textColor="@color/white"
                     android:textColorHint="#52FFFFFF"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
                 <TextView
                     android:id="@+id/locationLabel"
                     android:layout_width="match_parent"
@@ -129,23 +127,24 @@
                     android:layout_margin="5dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/earthGreen"
-                    android:textSize="20sp"
+                    android:textSize="11sp"
                     android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/locationEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_marginStart="5dp"
                     android:padding="10dp"
+                    android:textSize="16sp"
                     android:hint="San Francisco"
                     android:background="@drawable/fields_round_corner"
-                    android:minHeight="48dp"
+
                     android:nextFocusDown="@+id/passwordEditText"
 
                     android:textColor="@color/white"
                     android:textColorHint="#52FFFFFF"
-                    android:textSize="20sp" />
+                    />
                 <TextView
                     android:id="@+id/pronounsLabel"
                     android:layout_width="match_parent"
@@ -154,17 +153,16 @@
                     android:layout_margin="5dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/earthGreen"
-                    android:textSize="20sp"
+                    android:textSize="11sp"
                     android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/pronounsEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_marginStart="5dp"
                     android:hint="She/Her"
                     android:background="@drawable/fields_round_corner"
-                    android:minHeight="48dp"
                     android:nextFocusDown="@+id/passwordEditText"
                     android:padding="10dp"
                     android:textColor="@color/white"
@@ -174,27 +172,25 @@
                     android:id="@+id/websiteLabel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Website"
+                    android:text="@string/website"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/earthGreen"
-                    android:textSize="20sp"
-                    android:layout_margin="5dp"
+                    android:textSize="11sp"
+                    android:layout_marginStart="5dp"
                     android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/WebsiteEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-
-                    android:hint="juliahill.com"
+                    android:layout_marginStart="5dp"
+                    android:hint="@string/juliahill_com"
                     android:background="@drawable/fields_round_corner"
-                    android:minHeight="48dp"
                     android:nextFocusDown="@+id/passwordEditText"
                     android:padding="10dp"
                     android:textColor="@color/white"
                     android:textColorHint="#52FFFFFF"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
                 <TextView
                     android:id="@+id/MyStoryLabel"
                     android:layout_width="match_parent"
@@ -203,14 +199,14 @@
                     android:layout_margin="5dp"
                     android:textAppearance="@style/TextAppearance.AppCompat.Medium"
                     android:textColor="@color/earthGreen"
-                    android:textSize="20sp"
+                    android:textSize="11sp"
                     android:textStyle="bold" />
 
                 <EditText
                     android:id="@+id/MyStoryEditText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
+                    android:layout_marginStart="5dp"
                     android:inputType="textMultiLine"
 
                     android:gravity="start"
@@ -220,126 +216,8 @@
                     android:padding="10dp"
                     android:textColor="@color/white"
                     android:textColorHint="#52FFFFFF"
-                    android:textSize="20sp" />
+                    android:textSize="16sp" />
 
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-
-                    <TextView
-                        android:id="@+id/textInterest"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="Interests"
-                        android:textColor="@color/earthGreen"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/textInterestEdit"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="end"
-                        android:layout_margin="5dp"
-                        android:text="Edit"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-
-                        app:layout_constraintBottom_toBottomOf="@+id/textInterest"
-                        app:layout_constraintTop_toTopOf="@+id/textInterest"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        tools:layout_editor_absoluteX="88dp"
-                        tools:layout_editor_absoluteY="-44dp" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/cardView9"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:background="@drawable/grey_round_buttons"
-
-                    app:layout_constraintEnd_toEndOf="@+id/cardView8"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/cardView8"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView8">
-
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/interestsRecycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="61dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginTop="10dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    >
-                    <TextView
-                        android:id="@+id/groupsLabel"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="Groups"
-                        android:textColor="@color/earthGreen"
-                        android:textSize="20sp"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <TextView
-                        android:id="@+id/editGroups"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:text="Edit"
-                        android:textColor="@color/white"
-                        android:textSize="20sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/groupsLabel"
-                        app:layout_constraintTop_toTopOf="@+id/groupsLabel"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        tools:layout_editor_absoluteX="5dp"
-                        tools:layout_editor_absoluteY="5dp" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:id="@+id/groupsCard"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-android:layout_marginBottom="10dp"
-                    android:background="@drawable/grey_round_buttons"
-
-                    app:layout_constraintEnd_toEndOf="@+id/cardView8"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="@+id/cardView8"
-                    app:layout_constraintTop_toBottomOf="@+id/cardView8">
-
-
-                    <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/groupsRecycler"
-                        android:layout_width="match_parent"
-                        android:layout_height="61dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="10dp"
-                        android:layout_marginEnd="5dp"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/buttonNext"
                     android:layout_width="320dp"

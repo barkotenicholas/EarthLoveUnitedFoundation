@@ -68,7 +68,8 @@ Log.d("userName",userProfile.getName());
         clubsRecycler.setAdapter( clubsAdapter);
         clubsRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
 
-        postsLists=new ArrayList<Integer>(Arrays.asList(R.drawable.contactsshare,R.drawable.girl,R.drawable.globe,R.drawable.logo,R.drawable.loveunited,R.drawable.globe,R.drawable.logo));
+
+        postsLists=new ArrayList<Integer>(Arrays.asList(R.drawable.nature1,R.drawable.nature2,R.drawable.nature3,R.drawable.nature4,R.drawable.nature5,R.drawable.nature1,R.drawable.nature2));
         postsAdapter=new photoPostAdapter(this,postsLists);
         postsRecycler.setAdapter( postsAdapter);
         postsRecycler.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));

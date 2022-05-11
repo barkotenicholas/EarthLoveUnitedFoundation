@@ -23,7 +23,7 @@
         <entry key="app/src/main/res/layout/dark_list_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_clubs.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_comments_post.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_create_profile.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_create_profile.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_display_profile.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_edit.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_edit_checkbox.xml" value="0.1" />
@@ -38,6 +38,7 @@
         <entry key="app/src/main/res/layout/image_post_item.xml" value="0.1527777777777778" />
         <entry key="app/src/main/res/layout/interest_item.xml" value="0.1" />
         <entry key="app/src/main/res/layout/post_item.xml" value="0.33" />
+        <entry key="app/src/main/res/menu/bottom_navigation.xml" value="0.1" />
       </map>
     </option>
   </component>
