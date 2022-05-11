@@ -80,8 +80,7 @@
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_centerInParent="true"
-            android:orientation="horizontal"
-            android:paddingEnd="0dp">
+            android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/removeFollowerButton"
