@@ -6,7 +6,7 @@ import android.os.Bundle;
 
 import com.example.earth.R;
 
-public class FollowActivity extends AppCompatActivity {
+public class editActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
