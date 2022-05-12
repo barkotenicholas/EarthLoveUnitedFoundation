@@ -21,6 +21,8 @@ import java.util.List;
 public class clubsAdapter extends RecyclerView.Adapter<clubsAdapter.ViewHolder>{
     List<String> clubLabels;
     LayoutInflater inflater;
+    public ArrayList<String> selectedClubs = new ArrayList<>();
+    boolean isSelected = false;
     public clubsAdapter(Context context, List<String> clubLabels) {
         this.clubLabels =  clubLabels;
         this.inflater = LayoutInflater.from(context);
@@ -33,14 +35,28 @@ public class clubsAdapter extends RecyclerView.Adapter<clubsAdapter.ViewHolder>{
 
     }
 
+    public ArrayList<String> getSelectedClubs() {
+        return selectedClubs;
+    }
+
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.clubLabel.setText(clubLabels.get(position));
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
+        holder.clubCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                holder.clubCard.setBackgroundResource(R.drawable.green_rounded_corner);
-                holder.clubLabel.setTextColor(Color.parseColor("#7AF2AA"));
+                isSelected = true;
+                if (selectedClubs.contains(clubLabels.get(holder.getBindingAdapterPosition()))) {
+                    holder.clubCard.setBackgroundColor(Color.TRANSPARENT);
+                    selectedClubs.remove(clubLabels.get(holder.getAbsoluteAdapterPosition()));
+                } else {
+                    holder.clubCard.setBackgroundResource(R.drawable.green_rounded_corner);
+                    selectedClubs.add(clubLabels.get(holder.getAbsoluteAdapterPosition()));
+                }
+
+                if (selectedClubs.size() == 0) {
+                    isSelected = false;
+                }
             }
         });
     }

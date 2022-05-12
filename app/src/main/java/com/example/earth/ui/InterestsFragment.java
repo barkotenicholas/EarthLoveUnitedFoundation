@@ -41,6 +41,9 @@ public class InterestsFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentInterestsBinding.inflate(inflater, container, false);
 
+        if (getArguments() != null) {
+            newProfile = (profile) getArguments().getSerializable("prof");
+        }
         Fragment profileFragment = getActivity().getSupportFragmentManager().findFragmentById(R.id.createProfileFragment);
         requireActivity().getOnBackPressedDispatcher().addCallback(getActivity(), new OnBackPressedCallback(true) {
             @Override
@@ -48,6 +51,12 @@ public class InterestsFragment extends Fragment {
                 requireActivity().getSupportFragmentManager().popBackStack();
             }
         });
+
+        binding.next.setOnClickListener(view -> {
+
+
+        });
+
         return binding.getRoot();
 
     }
@@ -55,8 +64,8 @@ public class InterestsFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        interestLabels=new ArrayList<String>(Arrays.asList("Environment","Severe Weather","Deforestation","Polar Landscape","Water Levels","Forest Fire","Deforestation","Polar Landscape"));
-        images=new ArrayList<Integer>(Arrays.asList(R.drawable.contactsshare,R.drawable.girl,R.drawable.globe,R.drawable.logo,R.drawable.grey_round_buttons,R.drawable.loveunited,R.drawable.globe,R.drawable.logo));
+        interestLabels= new ArrayList<>(Arrays.asList("Environment", "Severe Weather", "Deforestation", "Polar Landscape", "Water Levels", "Forest Fire", "Deforestation", "Polar Landscape"));
+        images= new ArrayList<>(Arrays.asList(R.drawable.contactsshare, R.drawable.girl, R.drawable.globe, R.drawable.logo, R.drawable.grey_round_buttons, R.drawable.loveunited, R.drawable.globe, R.drawable.logo));
         interestsRecyclerviewAdapter=new InterestsRecyclerviewAdapter(getContext(),images,interestLabels);
         GridLayoutManager gridLayoutManager=new GridLayoutManager(getContext(),2,GridLayoutManager.VERTICAL,false);
         dataList= binding.interestRecyclerView;
@@ -65,22 +74,22 @@ public class InterestsFragment extends Fragment {
         binding.notNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.interestFrameLayout,new ClubsFragment());
-                transaction.addToBackStack("CLUBS");
-                transaction.commit();
 
             }
         });
-        binding.next.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.interestFrameLayout,new ClubsFragment());
-                transaction.addToBackStack("CLUBS");
-                transaction.commit();
+        binding.next.setOnClickListener(view1 -> {
+            ArrayList<String> selected = interestsRecyclerviewAdapter.getSelectedLabels();
 
-            }
+            newProfile.setInterests(selected);
+            Bundle bundle = new Bundle();
+            bundle.putSerializable("prof",newProfile);
+            ClubsFragment clubsFragment = new ClubsFragment();
+            clubsFragment.setArguments(bundle);
+            FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.interestFrameLayout,clubsFragment);
+            transaction.addToBackStack("CLUBS");
+            transaction.commit();
+
         });
 
     }

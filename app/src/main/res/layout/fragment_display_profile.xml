@@ -38,7 +38,6 @@
                 android:layout_height="244dp"
 android:layout_marginTop="10dp"
                 android:scaleType="centerCrop"
-                android:src="@drawable/girl"
                 app:layout_constraintStart_toStartOf="@+id/cardView2"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:layout_conversion_absoluteHeight="350dp"
@@ -216,7 +215,7 @@ android:layout_marginTop="10dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/newName"
-                    app:layout_constraintVertical_bias="0.0" />
+                    app:layout_constraintVertical_bias="0.051" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -243,43 +242,19 @@ android:layout_marginTop="10dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <Button
-                    android:id="@+id/button11"
-                    android:layout_width="wrap_content"
+
+                <LinearLayout
+                    android:id="@+id/ine"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-
-                    android:layout_marginStart="4dp"
-
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/green_rounded_corner"
-                    android:text="Environmental Racism"
-                    android:textColor="@color/white"
-                    android:textStyle="bold"
-                    app:backgroundTint="@color/earthDark"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView18" />
-
-                <Button
-                    android:id="@+id/button12"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:layout_marginStart="27dp"
-
-                    android:layout_marginEnd="4dp"
-                    android:background="@drawable/green_rounded_corner"
-                    android:text="Forest Fires"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    app:backgroundTint="@color/earthDark"
+                    android:layout_marginTop="32dp"
+                    android:orientation="horizontal"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.8"
-                    app:layout_constraintStart_toEndOf="@+id/button11"
-                    app:layout_constraintTop_toTopOf="@+id/button11"
-                    app:layout_constraintVertical_bias="0.058" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                   </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/cardView9"
@@ -308,34 +283,16 @@ android:layout_marginTop="10dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <Button
+                <LinearLayout
                     android:id="@+id/button13"
+                    android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="40dp"
-                    android:background="@drawable/green_rounded_corner"
-                    android:text="Young Activists"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    app:backgroundTint="@color/earthDark"
                     app:layout_constraintStart_toStartOf="@+id/textView20"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <Button
-                    android:id="@+id/button14"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/green_rounded_corner"
-                    android:text="Climate Changes"
-                    android:textColor="@color/white"
-                    android:textSize="10sp"
-                    android:textStyle="bold"
-                    app:backgroundTint="@color/earthDark"
-                    app:layout_constraintBottom_toBottomOf="@+id/button13"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/button13" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+               </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageView
                 android:id="@+id/imageView16"

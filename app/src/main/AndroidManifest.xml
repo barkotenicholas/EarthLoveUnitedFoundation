@@ -3,8 +3,8 @@
     package="com.example.earth">
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
-    <uses-permission android:name="android.permission.INTERNET"/>
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,14 +13,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Earth.NoActionBar">
         <activity
+            android:name=".EditProfiles"
+            android:exported="true" >
+
+        </activity>
+        <activity
             android:name=".ui.FollowActivity"
             android:exported="true"
             android:theme="@style/Theme.MaterialComponents.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.PostsActivity"
@@ -33,31 +34,24 @@
             android:exported="false" />
         <activity
             android:name=".ui.ProfileActivity"
-            android:exported="false"/>
-      
-
+            android:exported="false" />
         <activity
             android:name=".PostActivity"
             android:exported="false" />
         <activity
             android:name=".HomeActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-
-        </activity>
+            android:exported="true"></activity>
         <activity
-                android:name=".ui.otp.OtpVerificationActivity"
-                android:exported="false"
-                android:theme="@style/Theme.Earth.NoActionBar"/>
+            android:name=".ui.otp.OtpVerificationActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Earth.NoActionBar" />
         <activity
             android:name=".ui.signup.SignUpActivity"
             android:exported="true"
-            android:theme="@style/Theme.Earth.NoActionBar"/>
+            android:theme="@style/Theme.Earth.NoActionBar" />
         <activity
             android:name=".PhoneConfirmation"
             android:exported="false" />
@@ -72,18 +66,16 @@
             android:exported="false" />
         <activity
             android:name=".ui.login.ActivityLogin"
-            android:exported="true">
-
-        </activity>
-        <activity android:name=".CmmentFragment"
-            android:exported="true"/>
+            android:exported="true"></activity>
+        <activity
+            android:name=".CmmentFragment"
+            android:exported="true" />
         <activity
             android:name=".ui.LaunchActivity"
             android:exported="true" />
-
-        <activity android:name=".ui.SplashActivity"
+        <activity
+            android:name=".ui.SplashActivity"
             android:exported="true">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -93,8 +85,8 @@
 
         <meta-data
             android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts"
-            android:exported="true" />
+            android:exported="true"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

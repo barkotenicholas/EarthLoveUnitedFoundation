@@ -1,28 +1,22 @@
 package com.example.earth.ui;
 
-import static android.app.Activity.RESULT_OK;
 
 import android.app.Activity;
-import android.app.DownloadManager;
-import android.app.Instrumentation;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
-
-import android.preference.PreferenceManager;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 
 import com.example.earth.R;
 import com.example.earth.databinding.FragmentCreateProfileBinding;
@@ -63,9 +57,13 @@ Gson gson;
                 mEditor=mSharedPreferences.edit();
                 profile newUser=new profile(binding.nameEditText.getText().toString(),binding.BirthdayEditText.getText().toString(),binding.locationEditText.getText().toString(),binding.MyStoryEditText.getText().toString(),binding.pronounsEditText.getText().toString(),binding.WebsiteEditText.getText().toString(),sendUri);
                 mEditor.putString("userDetails", gson.toJson(newUser)).commit();
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("prof",newUser);
                 System.out.println(newUser.getName());
+                InterestsFragment interestsFragment = new InterestsFragment();
+                interestsFragment.setArguments(bundle);
                 FragmentTransaction transaction=requireActivity().getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.createProfileFragment,new InterestsFragment());
+                transaction.replace(R.id.createProfileFragment,interestsFragment);
                 transaction.addToBackStack("INTERESTS");
                 transaction.commit();
 

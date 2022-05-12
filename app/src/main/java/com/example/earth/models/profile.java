@@ -4,19 +4,34 @@ import android.net.Uri;
 
 import org.parceler.Parcel;
 
+import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 @Parcel
-public class profile {
+public class profile implements Serializable {
     String Name;
     String Birthday;
     String Location;
     String Story;
     String Pronoun;
     String Website;
+    String ProfileImage;
     Uri ImageUri;
-
+    ArrayList<String> interests;
+    ArrayList<String> clubs;
     public profile() {
 
+    }
+    public profile(String name, String birthday, String location, String story, String pronoun, String website, Uri imageUri,ArrayList<String> interest,ArrayList<String> club) {
+        Name = name;
+        Birthday = birthday;
+        Location = location;
+        Story = story;
+        Pronoun = pronoun;
+        Website = website;
+        ImageUri = imageUri;
+        interests = interest;
+        clubs = club;
     }
     public profile(String name, String birthday, String location, String story, String pronoun, String website, Uri imageUri) {
         Name = name;
@@ -26,6 +41,15 @@ public class profile {
         Pronoun = pronoun;
         Website = website;
         ImageUri = imageUri;
+
+    }
+
+    public String getProfileImage() {
+        return ProfileImage;
+    }
+
+    public void setProfileImage(String profileImage) {
+        ProfileImage = profileImage;
     }
 
     public String getName() {
@@ -84,5 +108,19 @@ public class profile {
         ImageUri = imageUri;
     }
 
+    public void setInterests(ArrayList<String> interests) {
+        this.interests = interests;
+    }
 
+    public ArrayList<String> getInterests() {
+        return interests;
+    }
+
+    public ArrayList<String> getClubs() {
+        return clubs;
+    }
+
+    public void setClubs(ArrayList<String> clubs) {
+        this.clubs = clubs;
+    }
 }

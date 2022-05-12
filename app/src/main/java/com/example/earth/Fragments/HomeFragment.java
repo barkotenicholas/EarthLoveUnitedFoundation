@@ -24,6 +24,7 @@ import android.widget.Toast;
 
 import com.example.earth.Adapters.PostAdapters;
 import com.example.earth.Adapters.storiesAdapter;
+import com.example.earth.EditProfiles;
 import com.example.earth.R;
 import com.example.earth.models.Follo;
 import com.example.earth.models.Posts;
@@ -154,7 +155,7 @@ public class HomeFragment extends Fragment {
                         alert.show();
                     }
                     if(menuItem.getItemId() == R.id.profile){
-                        viewFragment(new CreateProfileFragment(),"oo");
+                        startActivity(new Intent(getContext(), EditProfiles.class));
                     }
                     return true;
                 }

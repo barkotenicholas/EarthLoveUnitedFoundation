@@ -3,49 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="../../../../layout/custom_preview.xml" value="0.97" />
-        <entry key="app/src/main/res/drawable/border_bottom_follow.xml" value="0.136" />
-        <entry key="app/src/main/res/drawable/bottom_sheet_background.xml" value="0.136" />
-        <entry key="app/src/main/res/drawable/fields_round_corner.xml" value="0.1755" />
-        <entry key="app/src/main/res/drawable/follow_dot.xml" value="0.136" />
-        <entry key="app/src/main/res/drawable/follow_search_view.xml" value="0.136" />
-        <entry key="app/src/main/res/drawable/green_button.xml" value="0.1615" />
-        <entry key="app/src/main/res/drawable/green_rounded_corner.xml" value="0.1805" />
-        <entry key="app/src/main/res/drawable/grey_round_buttons.xml" value="0.1305" />
-        <entry key="app/src/main/res/drawable/ic_baseline_add_circle_24.xml" value="0.1615" />
-        <entry key="app/src/main/res/drawable/remove_button.xml" value="0.136" />
-        <entry key="app/src/main/res/drawable/rounded_corner.xml" value="0.1215" />
-        <entry key="app/src/main/res/drawable/white_round_buttons.xml" value="0.1805" />
-        <entry key="app/src/main/res/layout/activity_display_profile.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_follow.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_launch.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.15625" />
-        <entry key="app/src/main/res/layout/activity_posts.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/activity_profile.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.13" />
-        <entry key="app/src/main/res/layout/club_item.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/follower_layout.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/following_layout.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_clubs.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_comments_post.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_create_profile.xml" value="0.16877637130801687" />
-        <entry key="app/src/main/res/layout/fragment_display_profile.xml" value="0.22" />
-        <entry key="app/src/main/res/layout/fragment_follow.xml" value="0.12546296296296297" />
-        <entry key="app/src/main/res/layout/fragment_followers.xml" value="0.23076923076923078" />
-        <entry key="app/src/main/res/layout/fragment_following.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/fragment_interests.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.15" />
-        <entry key="app/src/main/res/layout/fragment_options_dialog_list_dialog.xml" value="0.2" />
-        <entry key="app/src/main/res/layout/fragment_options_dialog_list_dialog_item.xml" value="0.13385416666666666" />
-        <entry key="app/src/main/res/layout/fragment_photo_posts.xml" value="0.1527777777777778" />
-        <entry key="app/src/main/res/layout/fragment_share_contacts.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/image_post_item.xml" value="0.1527777777777778" />
-        <entry key="app/src/main/res/layout/interest_item.xml" value="0.1" />
-        <entry key="app/src/main/res/layout/post_item.xml" value="0.33" />
-        <entry key="app/src/main/res/layout/sort_bottom_sheet.xml" value="0.2379182156133829" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/aa_24.xml" value="0.1695" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/border.xml" value="0.1695" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/eye_selector.xml" value="0.169" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/green_rounded_corner.xml" value="0.1695" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/grey_round_buttons.xml" value="0.1" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/ic_baseline_message_24.xml" value="0.1695" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/ic_heart.xml" value="0.1695" />
@@ -53,6 +14,7 @@
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/ic_visible_on.xml" value="0.1695" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/layout_bg.xml" value="0.169" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/drawable/sign_up_button.xml" value="0.1695" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/activity_edit_profiles.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/activity_follow.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/activity_launch.xml" value="0.20416666666666666" />
@@ -67,19 +29,26 @@
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/activity_sign_up.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/addpost.xml" value="0.25" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/club_item.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/comment_item.xml" value="0.21614583333333334" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/fragment_clubs.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/fragment_cmment.xml" value="0.33" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/fragment_code.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/fragment_connect.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/fragment_create_profile.xml" value="0.1" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/fragment_display_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/fragment_followers.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/fragment_following.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/fragment_home2.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/fragment_interests.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/fragment_number.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/interest_item.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/fragment_profile.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/interest_item.xml" value="0.5" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/lay_register.xml" value="0.25" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/layout_login.xml" value="0.33" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/post_item.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/post_page.xml" value="0.33" />
+        <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/sort_bottom_sheet.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/stories_page.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/title_nav_bar.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
