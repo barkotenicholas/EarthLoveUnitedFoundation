@@ -21,6 +21,7 @@ import android.widget.Toast;
 import com.example.earth.Adapters.CommentAdapter;
 import com.example.earth.databinding.FragmentCmmentBinding;
 import com.example.earth.models.Comment;
+import com.example.earth.models.profile;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -30,6 +31,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -78,7 +80,23 @@ public class CmmentFragment extends AppCompatActivity {
         fUser = FirebaseAuth.getInstance().getCurrentUser();
 
         //getUserImage();
+        FirebaseDatabase.getInstance().getReference().child("Users").child(authorId).child("Profile").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                profile profile = dataSnapshot.getValue(profile.class);
+
+                Picasso.get()
+                        .load(profile.getProfileImage())
+                        .into(imageProfile);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         post.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

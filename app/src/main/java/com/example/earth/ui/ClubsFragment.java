@@ -54,7 +54,7 @@ public class ClubsFragment extends Fragment {
     DatabaseReference myRef;
     StorageReference postrefrance;
     String url = "";
-
+String uid;
     public ClubsFragment() {
         // Required empty public constructor
     }
@@ -62,6 +62,8 @@ public class ClubsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         clubsBinding=  FragmentClubsBinding.inflate(inflater, container, false);
+
+
         if (getArguments() != null) {
             newProfile = (profile) getArguments().getSerializable("prof");
         }
@@ -84,8 +86,11 @@ public class ClubsFragment extends Fragment {
 
         myRef =  FirebaseDatabase.getInstance().getReference();
         GridLayoutManager gridLayoutManager=new GridLayoutManager(getContext(),1,GridLayoutManager.VERTICAL,false);
+        uid =FirebaseAuth.getInstance().getUid();
         dataList= clubsBinding.clubsRecycler;
         dataList.setLayoutManager(gridLayoutManager);
+        newProfile.setUid(uid);
+
         dataList.setAdapter( clubsAdapter);
         Log.d("before click","not yet clicked");
         clubsBinding.clubNotNow.setOnClickListener(view1 -> {
@@ -122,6 +127,7 @@ public class ClubsFragment extends Fragment {
                             Map<String, Object> profile = new HashMap<>();
                             profile.put("Name",newProfile.getName());
                             profile.put("BirthDay", newProfile.getBirthday());
+                            profile.put("uid", newProfile.getUid());
                             profile.put("Location", newProfile.getLocation());
                             profile.put("Story", newProfile.getStory());
                             profile.put("Pronoun", newProfile.getPronoun());

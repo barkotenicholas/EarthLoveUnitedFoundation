@@ -17,6 +17,7 @@ import com.example.earth.CmmentFragment;
 import com.example.earth.R;
 import com.example.earth.models.Follo;
 import com.example.earth.models.Posts;
+import com.example.earth.models.profile;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +29,8 @@ import com.squareup.picasso.Picasso;
 import org.w3c.dom.Text;
 
 import java.util.List;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class PostAdapters extends RecyclerView.Adapter<PostAdapters.postsViewHolder> {
     private List<Follo> posts;
@@ -54,6 +57,9 @@ public class PostAdapters extends RecyclerView.Adapter<PostAdapters.postsViewHol
         Picasso.get()
                 .load(c.getImageurl())
                 .into(holder.o);
+
+
+
         holder.like.setImageResource(R.drawable.ic_heart);
         holder.like.setTag("Like");
         isLikes(c.getPostid(),c.getPublisher(),holder.like);
@@ -64,16 +70,37 @@ public class PostAdapters extends RecyclerView.Adapter<PostAdapters.postsViewHol
             intent.putExtra("authorId", c.getPublisher());
             context.startActivity(intent);
         });
+        FirebaseDatabase.getInstance().getReference().child("Users").child(c.getPublisher()).child("Profile").addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
+                profile profile = dataSnapshot.getValue(profile.class);
+                if(!profile.getName().isEmpty() && !profile.getProfileImage().isEmpty() ){
+
+                    Picasso.get()
+                            .load(profile.getProfileImage())
+                            .into(holder.circleImageView);
+
+                    holder.name.setText(profile.getName());
+                }
+                else {
+
+
+                    holder.name.setText("User One");
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         holder.like.setOnClickListener(view->{
-
 
             if (holder.like.getTag().equals("Like")){
                 FirebaseDatabase.getInstance().getReference().child("Likes").child(c.getPostid()).child(FirebaseAuth.getInstance().getUid()).setValue(true);
-
             }else {
                 FirebaseDatabase.getInstance().getReference().child("Likes").child(c.getPostid()).child(FirebaseAuth.getInstance().getUid()).removeValue();
-
             }
 
         });
@@ -134,8 +161,9 @@ public class PostAdapters extends RecyclerView.Adapter<PostAdapters.postsViewHol
         private TextView likes;
         private ImageView o;
         private ImageView comment;
+        private TextView name;
         private ImageView like;
-
+        private CircleImageView circleImageView;
         public postsViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -144,6 +172,8 @@ public class PostAdapters extends RecyclerView.Adapter<PostAdapters.postsViewHol
             comment = itemView.findViewById(R.id.comment);
             likes = itemView.findViewById(R.id.idTVLikes);
             like = itemView.findViewById(R.id.like);
+            circleImageView = itemView.findViewById(R.id.idCVAuthor);
+            name = itemView.findViewById(R.id.idTVAuthorName);
         }
 
     }

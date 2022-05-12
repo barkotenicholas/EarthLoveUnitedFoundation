@@ -5,7 +5,9 @@ plugins {
 
 android {
     compileSdk 32
-
+    lintOptions {
+        checkReleaseBuilds false
+    }
     defaultConfig {
         applicationId "com.example.earth"
         minSdk 21
@@ -71,7 +73,10 @@ dependencies {
     implementation 'com.google.android.gms:play-services-auth:20.1.0'
 
 
-    implementation 'com.squareup.picasso:picasso:2.71828'
+    implementation ('com.squareup.picasso:picasso:2.71828') {
+        exclude group: 'com.android.support'
+        exclude module: ['exifinterface', 'support-annotations']
+    }
     implementation 'de.hdodenhof:circleimageview:3.1.0'
 
 }

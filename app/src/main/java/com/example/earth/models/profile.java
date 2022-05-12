@@ -10,6 +10,7 @@ import java.util.List;
 @Parcel
 public class profile implements Serializable {
     String Name;
+    String uid;
     String Birthday;
     String Location;
     String Story;
@@ -46,6 +47,14 @@ public class profile implements Serializable {
 
     public String getProfileImage() {
         return ProfileImage;
+    }
+
+    public String getUid() {
+        return uid;
+    }
+
+    public void setUid(String uid) {
+        this.uid = uid;
     }
 
     public void setProfileImage(String profileImage) {
