@@ -2,6 +2,7 @@ package com.example.earth.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -35,7 +36,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 public class PostAdapters extends RecyclerView.Adapter<PostAdapters.postsViewHolder> {
     private List<Follo> posts;
     private Context context;
-
+    profile a;
     public PostAdapters(List<Follo> posts, Context context) {
         this.posts = posts;
         this.context = context;
@@ -59,11 +60,10 @@ public class PostAdapters extends RecyclerView.Adapter<PostAdapters.postsViewHol
                 .into(holder.o);
 
 
-
         holder.like.setImageResource(R.drawable.ic_heart);
         holder.like.setTag("Like");
-        isLikes(c.getPostid(),c.getPublisher(),holder.like);
-        nrLikes(holder.likes,c.getPostid());
+        isLikes(c.getPostid(), c.getPublisher(), holder.like);
+        nrLikes(holder.likes, c.getPostid());
         holder.comment.setOnClickListener(view -> {
             Intent intent = new Intent(context, CmmentFragment.class);
             intent.putExtra("postId", c.getPostid());
@@ -74,20 +74,19 @@ public class PostAdapters extends RecyclerView.Adapter<PostAdapters.postsViewHol
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-                profile profile = dataSnapshot.getValue(profile.class);
-                if(!profile.getName().isEmpty() && !profile.getProfileImage().isEmpty() ){
-
+                a = dataSnapshot.getValue(profile.class);
+                if (a != null) {
+                    holder.name.setText(a.getName());
+                    Log.d("AAAAAA", "onDataChange: " + a.getName());
                     Picasso.get()
-                            .load(profile.getProfileImage())
+                            .load(a.getProfileImage())
                             .into(holder.circleImageView);
 
-                    holder.name.setText(profile.getName());
                 }
-                else {
 
 
-                    holder.name.setText("User One");
-                }
+
+
             }
 
             @Override
@@ -95,11 +94,11 @@ public class PostAdapters extends RecyclerView.Adapter<PostAdapters.postsViewHol
 
             }
         });
-        holder.like.setOnClickListener(view->{
+        holder.like.setOnClickListener(view -> {
 
-            if (holder.like.getTag().equals("Like")){
+            if (holder.like.getTag().equals("Like")) {
                 FirebaseDatabase.getInstance().getReference().child("Likes").child(c.getPostid()).child(FirebaseAuth.getInstance().getUid()).setValue(true);
-            }else {
+            } else {
                 FirebaseDatabase.getInstance().getReference().child("Likes").child(c.getPostid()).child(FirebaseAuth.getInstance().getUid()).removeValue();
             }
 
@@ -108,38 +107,21 @@ public class PostAdapters extends RecyclerView.Adapter<PostAdapters.postsViewHol
 
     }
 
-    public void isLikes(String postid,String authid,ImageView imageView){
-    DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Likes").child(postid);
-
-    ref.addValueEventListener(new ValueEventListener() {
-        @Override
-        public void onDataChange(@NonNull DataSnapshot snapshot) {
-            if(snapshot.child(FirebaseAuth.getInstance().getUid()).exists()){
-                imageView.setImageResource(R.drawable.red_heart);
-                imageView.setTag("Liked");
-            }
-            else{
-                imageView.setImageResource(R.drawable.ic_heart);
-                imageView.setTag("Like");
-            }
-        }
-
-        @Override
-        public void onCancelled(@NonNull DatabaseError error) {
-
-        }
-    });
-
-    }
-    public void nrLikes(TextView a ,String postid){
+    public void isLikes(String postid, String authid, ImageView imageView) {
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Likes").child(postid);
-
 
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                a.setText(snapshot.getChildrenCount()+ " Likes");
+                if (snapshot.child(FirebaseAuth.getInstance().getUid()).exists()) {
+                    imageView.setImageResource(R.drawable.red_heart);
+                    imageView.setTag("Liked");
+                } else {
+                    imageView.setImageResource(R.drawable.ic_heart);
+                    imageView.setTag("Like");
+                }
             }
+
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
@@ -147,6 +129,25 @@ public class PostAdapters extends RecyclerView.Adapter<PostAdapters.postsViewHol
         });
 
     }
+
+    public void nrLikes(TextView a, String postid) {
+        DatabaseReference ref = FirebaseDatabase.getInstance().getReference().child("Likes").child(postid);
+
+
+        ref.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                a.setText(snapshot.getChildrenCount() + " Likes");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+    }
+
     @Override
     public int getItemCount() {
         return posts.size();
@@ -164,6 +165,7 @@ public class PostAdapters extends RecyclerView.Adapter<PostAdapters.postsViewHol
         private TextView name;
         private ImageView like;
         private CircleImageView circleImageView;
+
         public postsViewHolder(@NonNull View itemView) {
             super(itemView);
 
