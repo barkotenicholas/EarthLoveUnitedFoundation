@@ -52,6 +52,11 @@
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/stories_page.xml" value="0.21614583333333334" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/layout/title_nav_bar.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/barkote/AndroidStudioProjects/Earth/app/src/main/res/menu/menu.xml" value="0.20416666666666666" />
+        <entry key="app/src/main/res/drawable/connect_follow_btn.xml" value="0.143" />
+        <entry key="app/src/main/res/drawable/connect_name_age.xml" value="0.143" />
+        <entry key="app/src/main/res/drawable/connect_profile_image.xml" value="0.143" />
+        <entry key="app/src/main/res/layout/fragment_connect.xml" value="0.3962962962962963" />
+        <entry key="app/src/main/res/layout/post_page.xml" value="0.25" />
       </map>
     </option>
   </component>

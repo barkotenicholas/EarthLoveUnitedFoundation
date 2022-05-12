@@ -13,4 +13,8 @@
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
+
+    <style name="connectImageRoundedStyle" parent="">
+        <item name="cornerSize">4%</item>
+    </style>
 </resources>
