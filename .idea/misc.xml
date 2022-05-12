@@ -55,7 +55,11 @@
         <entry key="app/src/main/res/drawable/connect_follow_btn.xml" value="0.143" />
         <entry key="app/src/main/res/drawable/connect_name_age.xml" value="0.143" />
         <entry key="app/src/main/res/drawable/connect_profile_image.xml" value="0.143" />
+        <entry key="app/src/main/res/drawable/follow_dialog_edit.xml" value="0.143" />
+        <entry key="app/src/main/res/layout/custom_follow_dialog.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/follower_layout.xml" value="0.13385416666666666" />
         <entry key="app/src/main/res/layout/fragment_connect.xml" value="0.22" />
+        <entry key="app/src/main/res/layout/fragment_follow_dialog.xml" value="0.1328125" />
         <entry key="app/src/main/res/layout/post_page.xml" value="0.25" />
       </map>
     </option>
